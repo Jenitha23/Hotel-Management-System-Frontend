@@ -5,8 +5,8 @@
 - Collect name, email, phone, password.
 - Passwords are hashed before saving.
 - Validate input (email format, password strength).
-**Login**
-- Role-based access for Admin, Customer, and Staff.
+- **Login**
+  - Role-based access for Admin, Customer, and Staff.
 ### 2. Customer 
 - Browse hotels or rooms.
 - Search and filter rooms by type, price, or rating.
