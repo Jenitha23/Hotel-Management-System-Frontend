@@ -22,7 +22,7 @@
   - Add, remove, and update staff details.
   - Assign tasks to staff (cleaning, check-in/out, room service).
   - View staff list and their task status.
-  ### 4. Staff 
+ ### 4. Staff 
 - Staff login to see assigned tasks.
 - Update task status (completed/pending).
 - View personal schedule and assignments.
