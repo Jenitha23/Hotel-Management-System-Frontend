@@ -35,6 +35,6 @@
 - Backend: Java,Spring Boot  
 - Database: MySQL  
 - Authentication:Role-based access control
-- Other Tools: Maven, Git, GitHub, Jira
+- Other Tools: Maven, Git, GitHub, Jira, Postman (API testing)
   
   
