@@ -33,7 +33,7 @@
 - Staff login to see assigned tasks.
 - Update task status (completed/pending).
 - View personal schedule and assignments.
-### 5. Optional / Extra 
+### 5. Optional 
 - Hotel ratings and reviews by customers.
 - Notifications for booking updates or cancellations.
 - Admin dashboard with analytics charts (revenue, occupancy, tasks).
