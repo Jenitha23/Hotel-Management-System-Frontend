@@ -22,11 +22,11 @@
   - Add, remove, and update staff details.
   - Assign tasks to staff (cleaning, check-in/out, room service).
   - View staff list and their task status.
- ### 4. Staff 
+### 4. Staff 
 - Staff login to see assigned tasks.
 - Update task status (completed/pending).
 - View personal schedule and assignments.
- ### 5. Optional / Extra 
+### 5. Optional / Extra 
 - Hotel ratings and reviews by customers.
 - Notifications for booking updates or cancellations.
 - Admin dashboard with analytics charts (revenue, occupancy, tasks).
