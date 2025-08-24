@@ -1,16 +1,13 @@
-# Compiled class file
+######################################
+# Java / Spring Boot
+######################################
+# Compiled files
 *.class
-
-# Log file
 *.log
-
-# BlueJ files
 *.ctxt
-
-# Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Package Files #
+# Archives
 *.jar
 *.war
 *.nar
@@ -19,6 +16,57 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# JVM crash logs
 hs_err_pid*
 replay_pid*
+
+# Build output
+target/
+
+# Spring Boot config files
+application-*.yml
+application-*.properties
+!application.properties   # Keep main template, ignore environment-specific configs
+
+# Maven Wrapper
+.mvn/
+mvnw
+mvnw.cmd
+
+######################################
+# React (Vite) / Node.js
+######################################
+node_modules/
+dist/
+build/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+package-lock.json
+
+# Environment files
+.env
+.env.*
+!.env.example   # Keep example env file for reference
+
+######################################
+# OS generated files
+######################################
+.DS_Store
+Thumbs.db
+
+######################################
+# IDE / Editor files
+######################################
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
