@@ -5,6 +5,8 @@
 - Collect name, email, phone, password.
 - Passwords are hashed before saving.
 - Validate input (email format, password strength).
+**Login**
+- Role-based access for Admin, Customer, and Staff.
 ### 2. Customer 
 - Browse hotels or rooms.
 - Search and filter rooms by type, price, or rating.
@@ -13,6 +15,11 @@
 - Cancel bookings.
 - Update profile information.
 - Receive booking confirmation notifications (email).
+-  **Food Ordering from Room**
+  - View food menu from the room dashboard.
+  - Add food items to the cart.
+  - Place food orders from the room.
+  - Track food order status (e.g., Preparing, Delivered).
 ### 3. Admin 
 - Manage hotels and rooms (add/update/delete).
 - Update room availability and pricing.
@@ -34,7 +41,7 @@
 - Frontend: React, HTML, CSS, JavaScript  
 - Backend: Java,Spring Boot  
 - Database: MySQL  
-- Authentication:Role-based access control
+- Authentication: Role-based access control
 - Other Tools: Maven, Git, GitHub, Jira, Postman (API testing)
   
   
