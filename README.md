@@ -16,16 +16,16 @@
 - Update profile information.
 - Receive booking confirmation notifications (email).
 -  **Food Ordering from Room**
-  - View food menu from the room dashboard.
-  - Add food items to the cart.
-  - Place food orders from the room.
-  - Track food order status (e.g., Preparing, Delivered).
+   - View food menu from the room dashboard.
+   - Add food items to the cart.
+   - Place food orders from the room.
+   - Track food order status (e.g., Preparing, Delivered).
 ### 3. Admin 
 - Manage hotels and rooms (add/update/delete).
 - Update room availability and pricing.
 - View all customer bookings and details.
 - Generate reports (bookings, revenue, occupancy).
-  -**Staff Management**
+- **Staff Management**
   - Add, remove, and update staff details.
   - Assign tasks to staff (cleaning, check-in/out, room service).
   - View staff list and their task status.
