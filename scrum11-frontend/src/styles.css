@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root{
+    --bg:#0b1220;
+    --surface:#121c2b;
+    --border:#1e293b;
+    --text:#e6f0ff;
+    --muted:#9aa5b1;
+    --cta1:#22d3ee; /* cyan */
+    --cta2:#34d399; /* green */
+    --shadow:0 12px 28px rgba(0,0,0,.25);
+}
+
+*{ box-sizing:border-box }
+html,body,#root{ height:100% }
+body{ margin:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,Arial }
+
+.container{ max-width:1200px; margin:0 auto; padding:0 24px }
+
+/* Header */
+.site-header{
+    position: sticky; top:0; z-index:50;
+    background: linear-gradient(180deg, #0b1220, #0b1220f2 60%, transparent);
+    border-bottom: 1px solid var(--border);
+}
+.topbar{ padding:14px 0; display:flex; align-items:center; justify-content:space-between }
+.brand{ display:flex; gap:10px; align-items:center; font-weight:700 }
+
+/* Nav */
+.nav{ display:flex; gap:18px; align-items:center }
+.nav a{ color:#cfe0ff; text-decoration:none; padding:6px 8px; border-radius:8px }
+.nav a.active{ background:rgba(255,255,255,.06) }
+.btn-chip{
+    padding:6px 12px; border-radius:999px; color:#0a0f1a; font-weight:700; text-decoration:none;
+    background: linear-gradient(135deg, var(--cta1), var(--cta2));
+}
+
+/* Sections */
+.section{ padding:56px 0 }
+.section-title{ font-size:32px; margin:0 0 16px }
+
+/* Filters */
+.filters-row{
+    display:flex; gap:12px; flex-wrap:wrap;
+    background: rgba(255,255,255,.03);
+    border: 1px solid var(--border); border-radius: 12px; padding: 12px;
+    margin: 12px 0 20px;
+}
+.input,.select{
+    min-width:190px; padding:10px 12px; border-radius:12px;
+    background:#0e1626; border:1px solid var(--border); color:var(--text);
+}
+
+/* Rooms grid */
+.grid-rooms{ display:grid; gap:24px; grid-template-columns: repeat(3,minmax(0,1fr)) }
+@media (max-width:1024px){ .grid-rooms{ grid-template-columns: repeat(2,1fr) } }
+@media (max-width:640px){ .grid-rooms{ grid-template-columns: 1fr } }
+
+.card-room{
+    background:var(--surface); border:1px solid var(--border); border-radius:16px; overflow:hidden;
+    display:flex; flex-direction:column; box-shadow:var(--shadow);
+}
+.card-room img{ width:100%; height:200px; object-fit:cover; display:block }
+.card-body{ padding:16px; display:flex; flex-direction:column; gap:8px; flex:1 }
+.card-title{ margin:0; font-weight:700; font-size:18px }
+.card-meta{ color:var(--muted); font-size:14px; display:flex; gap:10px; align-items:center }
+.card-actions{ margin-top:auto }
+
+.badge{ display:inline-block; padding:2px 8px; font-size:12px; border-radius:999px; border:1px solid var(--border); color:var(--muted); background:rgba(255,255,255,.02) }
+.stars{ color:#ffd166; letter-spacing:1px }
+
+.btn-grad{
+    display:inline-block; padding:10px 14px; border-radius:12px; border:0; cursor:pointer;
+    color:#0a0f1a; font-weight:700; background: linear-gradient(135deg, var(--cta1), var(--cta2));
+}
+.btn-grad:hover{ filter:brightness(.95) }
