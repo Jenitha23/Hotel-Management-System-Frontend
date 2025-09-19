@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import { AuthProvider } from './auth/AuthContext.jsx'
 import './index.css'
-
+// Tailwind CSS custom colors can be defined in the tailwind.config.js file
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>

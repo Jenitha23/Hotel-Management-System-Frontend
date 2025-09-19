@@ -13,6 +13,7 @@ import AdminDashboard from './pages/AdminDashboard'
 import StaffDashboard from './pages/StaffDashboard'
 import ConnectionTest from './pages/ConnectionTest'
 
+// Tailwind CSS custom colors can be defined in the tailwind.config.js file
 function App() {
   return (
     <div className="min-h-screen bg-sand">
