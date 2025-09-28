@@ -40,7 +40,7 @@ const ResetPassword = () => {
       setMessage(response.data || 'Password reset successful!')
       setMessageType('success')
       
-      // Redirect to login after 2 seconds
+
       setTimeout(() => {
         navigate('/login', { 
           state: { message: 'Password reset successful! Please sign in with your new password.' }
@@ -77,7 +77,7 @@ const ResetPassword = () => {
     <div className="min-h-[80vh] flex items-center justify-center">
       <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-deepNavy mb-2">Reset Password</h2>
+          <h2 className="text-3xl font-bold text-deepNavy mb-2">Reset Your Password</h2>
           <p className="text-gray-600">Enter your new password</p>
         </div>
 
