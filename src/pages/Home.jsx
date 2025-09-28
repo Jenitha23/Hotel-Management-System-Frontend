@@ -6,7 +6,7 @@ const Home = () => {
 
   return (
     <div className="min-h-[80vh] flex flex-col items-center justify-center">
-      {/* Hero Section */}
+      {/* Hero section */}
       <div className="text-center max-w-4xl mx-auto mb-12">
         <div className="bg-gradient-to-r from-sand to-teal rounded-3xl p-12 shadow-2xl mb-8">
           <h1 className="text-5xl font-bold text-deepNavy mb-6">
@@ -64,7 +64,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Features Section */}
+      {/* Features section */}
       <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
           <div className="text-4xl mb-4">🏖️</div>
@@ -78,7 +78,7 @@ const Home = () => {
           <div className="text-4xl mb-4">🌺</div>
           <h3 className="text-xl font-semibold text-deepNavy mb-3">Luxury Amenities</h3>
           <p className="text-gray-600">
-            World-class spa, fine dining, and premium accommodations for the ultimate experience.
+            fine dining, and premium accommodations for the ultimate experience.
           </p>
         </div>
         
