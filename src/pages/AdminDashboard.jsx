@@ -56,7 +56,7 @@ const AdminDashboard = () => {
           </div>
         </div>
 
-        {/* Admin Access Verification */}
+
         {error ? (
           <div className="bg-red-50 border border-red-200 rounded-xl p-6 mb-8">
             <div className="text-center">
@@ -75,7 +75,7 @@ const AdminDashboard = () => {
           </div>
         )}
 
-        {/* Dashboard Features */}
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="bg-teal-50 border border-teal-200 rounded-xl p-6 text-center">
             <div className="text-4xl mb-4">👥</div>
