@@ -5,7 +5,7 @@ const ConfirmDialog = ({
                            isOpen,
                            onClose,
                            onConfirm,
-                           title = 'Confirm Action',
+                           title = 'Confirm Action 1',
                            message = 'Are you sure you want to proceed?',
                            confirmText = 'Confirm',
                            cancelText = 'Cancel',

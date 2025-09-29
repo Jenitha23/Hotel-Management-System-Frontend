@@ -6,7 +6,7 @@ import Card from '../components/ui/Card.jsx';
 const Home = () => {
     const features = [
         {
-            title: 'Luxury Accommodation',
+            title: 'Luxury Accommodation now',
             description: 'Experience premium comfort in our beautifully designed rooms with ocean views.',
             icon: '🏨'
         },
@@ -24,7 +24,7 @@ const Home = () => {
 
     return (
         <div style={{ minHeight: '100vh' }}>
-            {/* Header */}
+
             <header style={{
                 background: 'linear-gradient(135deg, var(--color-teal), var(--color-coral))',
                 color: 'white',
