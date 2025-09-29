@@ -6,7 +6,7 @@ import Card from '../components/ui/Card.jsx';
 const Home = () => {
     const features = [
         {
-            title: 'Luxury Accommodation now',
+            title: 'Luxury Accommodation ',
             description: 'Experience premium comfort in our beautifully designed rooms with ocean views.',
             icon: '🏨'
         },

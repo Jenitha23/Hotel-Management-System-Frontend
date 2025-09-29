@@ -8,8 +8,8 @@
     --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", "Apple Color Emoji", "Segoe UI Emoji";
 
     /* Additional theme variables */
-    --spacing-xs: 4px;
-    --spacing-sm: 8px;
+    --spacing-xs: 5px;
+    --spacing-sm: 9px;
     --spacing-md: 16px;
     --spacing-lg: 24px;
     --spacing-xl: 32px;
