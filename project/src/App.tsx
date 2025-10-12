@@ -228,7 +228,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
             </div>
             <div className="bg-white rounded-lg p-4 text-center shadow-sm">
               <div className="text-2xl font-bold text-[#FF7F6B]">{orderStats.delivering}</div>
-              <div className="text-sm text-[#0B2545]/70">Delivering</div>
+              <div className="text-sm text-[#0B2546]/70">Delivering</div>
             </div>
             <div className="bg-white rounded-lg p-4 text-center shadow-sm">
               <div className="text-2xl font-bold text-[#0B2545]">{orderStats.delivered}</div>
