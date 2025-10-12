@@ -195,35 +195,20 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
   };
 
   return (
-      <div className="min-h-screen bg-gradient-to-br from-[#F5E9DA] via-[#F5E9DA] to-[#1CA1A6]/10">
-        {/* Header */}
-        <div className="bg-gradient-to-r from-[#0B2545] to-[#0B2545]/90 text-white py-6">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex items-center gap-4">
-              <button
-                  onClick={onBack}
-                  className="bg-white/20 hover:bg-white/30 p-2 rounded-lg transition-colors"
-              >
-                <ArrowLeft className="w-5 h-5" />
-              </button>
-              <div className="flex-1">
-                <h1 className="text-2xl font-bold">Kitchen Management System</h1>
-                <p className="text-[#F5E9DA]">Manage all food orders and kitchen operations</p>
-              </div>
-              <div className="flex items-center gap-4 text-sm">
-                <div className="bg-[#FF7F6B]/20 px-3 py-1 rounded-full">
-                  <span className="text-[#FF7F6B] font-semibold">{orderStats.urgent} Urgent</span>
-                </div>
-                <div className="bg-[#1CA1A6]/20 px-3 py-1 rounded-full">
-                  <span className="text-[#1CA1A6] font-semibold">{orderStats.preparing} Preparing</span>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="min-h-screen bg-gradient-to-br from-[#F5E9DA] via-[#F5E9DA] to-[#1CA1A6]/10 p-6">
+        {/* Back Button */}
+        <div className="max-w-7xl mx-auto mb-6">
+          <button
+              onClick={onBack}
+              className="bg-[#1CA1A6] hover:bg-[#1CA1A6]/90 text-white p-2 rounded-lg transition-colors shadow-sm flex items-center gap-2"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            Back
+          </button>
         </div>
 
         {/* Stats Dashboard */}
-        <div className="max-w-7xl mx-auto px-6 py-6">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-4 mb-6">
             <div className="bg-white rounded-lg p-4 text-center shadow-sm">
               <div className="text-2xl font-bold text-[#0B2545]">{orderStats.total}</div>
@@ -248,6 +233,16 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
             <div className="bg-white rounded-lg p-4 text-center shadow-sm">
               <div className="text-2xl font-bold text-[#0B2545]">{orderStats.delivered}</div>
               <div className="text-sm text-[#0B2545]/70">Delivered</div>
+            </div>
+          </div>
+
+          {/* Priority Indicators */}
+          <div className="flex items-center gap-4 mb-6">
+            <div className="bg-[#FF7F6B]/20 px-3 py-1 rounded-full">
+              <span className="text-[#FF7F6B] font-semibold">{orderStats.urgent} Urgent</span>
+            </div>
+            <div className="bg-[#1CA1A6]/20 px-3 py-1 rounded-full">
+              <span className="text-[#1CA1A6] font-semibold">{orderStats.preparing} Preparing</span>
             </div>
           </div>
 
