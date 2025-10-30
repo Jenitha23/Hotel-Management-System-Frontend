@@ -1,0 +1,214 @@
+.task-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(28, 161, 166, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(11, 37, 69, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+.task-card:hover {
+    box-shadow: 0 6px 20px rgba(11, 37, 69, 0.15);
+    transform: translateY(-2px);
+    border-color: rgba(28, 161, 166, 0.4);
+}
+
+.task-card.overdue {
+    border-left: 4px solid #FF7F6B;
+    background: rgba(255, 127, 107, 0.05);
+}
+
+.task-card.urgent {
+    border-left: 4px solid #FF7F6B;
+    background: rgba(255, 127, 107, 0.08);
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.task-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0B2545;
+    margin: 0;
+    flex: 1;
+}
+
+.task-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.task-priority {
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.priority-low {
+    background: rgba(28, 161, 166, 0.1);
+    color: #1CA1A6;
+    border: 1px solid rgba(28, 161, 166, 0.3);
+}
+
+.priority-medium {
+    background: rgba(245, 233, 218, 0.8);
+    color: #8B7355;
+    border: 1px solid rgba(139, 115, 85, 0.3);
+}
+
+.priority-high {
+    background: rgba(255, 193, 7, 0.1);
+    color: #FF8C00;
+    border: 1px solid rgba(255, 140, 0, 0.3);
+}
+
+.priority-urgent {
+    background: rgba(255, 127, 107, 0.1);
+    color: #FF7F6B;
+    border: 1px solid rgba(255, 127, 107, 0.3);
+}
+
+.task-status {
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-todo {
+    background: rgba(108, 117, 125, 0.1);
+    color: #6c757d;
+    border: 1px solid rgba(108, 117, 125, 0.3);
+}
+
+.status-in_progress {
+    background: rgba(28, 161, 166, 0.1);
+    color: #1CA1A6;
+    border: 1px solid rgba(28, 161, 166, 0.3);
+}
+
+.status-done {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.status-cancelled {
+    background: rgba(255, 127, 107, 0.1);
+    color: #FF7F6B;
+    border: 1px solid rgba(255, 127, 107, 0.3);
+}
+
+.task-description {
+    color: #64748b;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.task-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.task-assignee {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.assignee-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1CA1A6 0%, #16858a 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.task-due-date {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.due-date.overdue {
+    color: #FF7F6B;
+    font-weight: 600;
+}
+
+.due-date.today {
+    color: #1CA1A6;
+    font-weight: 600;
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.875rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid rgba(28, 161, 166, 0.3);
+    color: #1CA1A6;
+}
+
+.btn-outline:hover {
+    background: rgba(28, 161, 166, 0.1);
+    border-color: #1CA1A6;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #1CA1A6 0%, #16858a 100%);
+    color: white;
+    border: 1px solid #1CA1A6;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #16858a 0%, #147277 100%);
+    border-color: #16858a;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(28, 161, 166, 0.3);
+}
+
+.btn-danger {
+    background: rgba(255, 127, 107, 0.9);
+    color: white;
+    border: 1px solid #FF7F6B;
+}
+
+.btn-danger:hover {
+    background: #FF7F6B;
+    border-color: #FF7F6B;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(255, 127, 107, 0.3);
+}
