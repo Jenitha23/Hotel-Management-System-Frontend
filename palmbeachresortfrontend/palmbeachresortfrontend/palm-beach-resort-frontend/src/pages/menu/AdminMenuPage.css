@@ -1,0 +1,323 @@
+.admin-menu-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #F5E9DA 0%, #f8f2e8 100%);
+    padding: 20px;
+}
+
+.admin-page-header {
+    background: linear-gradient(15deg, #0B2545 0%, #16858a 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 20px rgba(28, 161, 166, 0.3);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* This targets the first div inside header-content (where your title and back button are) */
+.header-content > div:first-child {
+    flex: 1;
+}
+
+.header-navigation {
+    margin-bottom: 10px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.page-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #F5E9DA;
+}
+
+.page-subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    color: #F5E9DA;
+}
+
+/* Updated stats grid - only affects AdminMenuPage */
+.admin-menu-page .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.admin-menu-page .stat-card {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px 20px;
+    border-radius: 12px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(28, 161, 166, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(11, 37, 69, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-menu-page .stat-card:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(11, 37, 69, 0.15);
+}
+
+.admin-menu-page .stat-icon {
+    font-size: 2rem;
+    opacity: 0.9;
+    color: #1CA1A6;
+    margin-bottom: 10px;
+}
+
+.admin-menu-page .stat-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-menu-page .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1CA1A6;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.admin-menu-page .stat-label {
+    color: #64748b;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.admin-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(11, 37, 69, 0.1);
+}
+
+.search-control {
+    flex: 1;
+    max-width: 300px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #1CA1A6;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    background: white;
+    color: #0B2545;
+}
+
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(28, 161, 166, 0.2);
+}
+
+.filter-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-select {
+    padding: 10px 15px;
+    border: 2px solid #1CA1A6;
+    border-radius: 20px;
+    background: white;
+    color: #0B2545;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.filter-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(28, 161, 166, 0.2);
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-primary {
+    background: #1CA1A6;
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #16858a;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: #5a6268;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.error-alert {
+    background: #FFEBEE;
+    color: #F44336;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(11, 37, 69, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #1CA1A6 0%, #16858a 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    color: #F5E9DA;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+@media (max-width: 768px) {
+    .admin-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-control {
+        max-width: none;
+    }
+
+    .filter-controls {
+        justify-content: center;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .header-actions {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .page-title {
+        font-size: 1.8rem;
+    }
+
+    .admin-menu-page .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+    }
+
+    .admin-menu-page .stat-card {
+        padding: 20px 15px;
+    }
+
+    .admin-menu-page .stat-icon {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+
+    .admin-menu-page .stat-number {
+        font-size: 2rem;
+    }
+
+    .admin-menu-page .stat-label {
+        font-size: 0.8rem;
+    }
+}

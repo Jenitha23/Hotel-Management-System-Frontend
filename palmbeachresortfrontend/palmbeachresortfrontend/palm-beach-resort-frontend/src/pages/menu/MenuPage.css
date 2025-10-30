@@ -1,0 +1,236 @@
+.menu-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #F5E9DA 0%, #f8f2e8 100%);
+    padding: 20px;
+    position: relative;
+}
+
+/* Updated Header Styles */
+.menu-header {
+    background: linear-gradient(135deg, #0B2545 0%, #16858a 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 20px rgba(28, 161, 166, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+.header-center {
+    text-align: center;
+    flex: 1;
+}
+
+.header-spacer {
+    min-width: 80px; /* Matches back button width for balance */
+}
+
+.menu-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #F5E9DA;
+}
+
+.menu-subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    color: #F5E9DA;
+    margin: 0;
+}
+
+/* Rest of your existing styles */
+.categories-section {
+    margin-bottom: 30px;
+}
+
+.categories-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 10px 20px;
+    background: white;
+    border: 2px solid #1CA1A6;
+    border-radius: 20px;
+    color: #0B2545;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.category-btn:hover {
+    background: #1CA1A6;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.category-btn.active {
+    background: #1CA1A6;
+    color: white;
+    border-color: #1CA1A6;
+}
+
+.error-banner {
+    background: #FFEBEE;
+    color: #F44336;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.retry-btn {
+    background: #F44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.loading-section {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #F5E9DA;
+    border-left: 4px solid #1CA1A6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.no-items-message {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+.cart-icon {
+    position: fixed;
+    top: 30px; /* Adjusted for new header */
+    right: 20px;
+    background: linear-gradient(135deg, #FF7F6B 0%, #ff6b52 100%);
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(255, 127, 107, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #1CA1A6;
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 1001;
+}
+
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .menu-page {
+        padding: 15px;
+    }
+
+    .menu-title {
+        font-size: 1.8rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .back-button {
+        align-self: flex-start;
+        margin-bottom: 10px;
+    }
+
+    .header-spacer {
+        display: none;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .categories-container {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .cart-icon {
+        top: 25px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+}
