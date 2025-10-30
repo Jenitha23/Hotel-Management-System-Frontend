@@ -1,0 +1,83 @@
+:root {
+    /* Beach Theme */
+    --sand: #F5E9DA;
+    --teal: #1CA1A6;
+    --teal-dark: #168C8F;
+    --teal-light: #49CDD1;
+    --coral: #FF7F6B;
+    --navy: #0B2545;
+    --navy-60: rgba(11, 37, 69, 0.6);
+    --navy-10: rgba(11, 37, 69, 0.1);
+}
+
+/* Wrapper */
+.user-type-selector {
+    margin: 0.1rem 0;
+}
+
+.user-type-grid {
+    display: flex;
+    gap: 0.5rem;
+    align-items: stretch;
+
+}
+
+
+/* Cards */
+.user-type-card {
+    flex: 1;
+    border: 4px solid #ddd;
+    border-radius: 16px;
+    padding: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #ffffff;
+}
+
+.user-type-card:hover {
+    border-color: var(--teal);
+}
+
+.user-type-card.selected {
+    border-color: var(--teal);
+    background: var(--navy);
+    color: #ffffff;
+}
+
+.user-type-card.selected h4,
+.user-type-card.selected p {
+    color: #ffffff;
+}
+
+/* Icon + text */
+.user-type-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0rem;
+}
+
+.user-type-card h4 {
+    margin: 0.1rem 0;
+    font-size: 0.9rem;
+    color: var(--navy);
+    font-weight: 500;
+}
+
+.user-type-card p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--navy-60);
+    line-height: 1.2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .user-type-grid {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .user-type-card {
+        width: 100%;
+    }
+}

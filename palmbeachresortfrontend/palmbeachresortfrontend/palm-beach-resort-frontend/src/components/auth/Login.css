@@ -1,0 +1,222 @@
+:root {
+    /* Beach Theme */
+    --sand: #F5E9DA;
+    --teal: #1CA1A6;
+    --teal-strong: #168C8F;
+    --coral: #FF7F6B;
+    --navy: #0B2545;
+    --navy-70: rgba(11, 37, 69, 0.7);
+    --navy-10: rgba(11, 37, 69, 0.1);
+}
+
+/* Main Container */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--sand);
+    padding: 2rem;
+}
+
+/* Card */
+.login-card {
+    background: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid rgba(11, 37, 69, 0.1);
+}
+
+/* Header */
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-header h2 {
+    color: var(--navy);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.login-subtitle {
+    color: var(--navy-70);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* Form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 0.9rem;
+}
+
+.form-input {
+    padding: 0.85rem 1rem;
+    border: 2px solid #e1e8ed;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    color: var(--navy);
+    background: #fff;
+}
+
+.form-input::placeholder {
+    color: rgba(11, 37, 69, 0.4);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(28, 161, 166, 0.1);
+}
+
+/* Error Message */
+.error-message {
+    background: #FFF1EF;
+    color: #B23B2B;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #F5C2BA;
+    text-align: center;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.error-icon {
+    font-size: 1rem;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Login Button */
+.login-btn {
+    background: var(--teal);
+    color: #ffffff;
+    border: none;
+    padding: 0.85rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.login-btn:hover:not(:disabled) {
+    background: var(--teal-strong);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(28, 161, 166, 0.3);
+}
+
+.login-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.login-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Footer */
+.login-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(11, 37, 69, 0.1);
+}
+
+.login-footer p {
+    color: var(--navy-70);
+    font-size: 0.9rem;
+}
+
+/* Signup link */
+.signup-link {
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.signup-link:hover {
+    color: var(--teal-strong);
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 1rem;
+    }
+
+    .login-card {
+        padding: 2rem 1.5rem;
+        max-width: 90%;
+    }
+
+    .login-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .form-input {
+        padding: 0.75rem 0.9rem;
+    }
+
+    .login-btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .login-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .form-input {
+        padding: 0.7rem 0.8rem;
+    }
+}
