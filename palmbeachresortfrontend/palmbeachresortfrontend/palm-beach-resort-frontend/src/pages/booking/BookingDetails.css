@@ -1,0 +1,554 @@
+/* src/pages/booking/BookingDetails.css */
+.booking-details-page {
+    min-height: 100vh;
+    background: radial-gradient(1200px 600px at 80% -200px, rgba(28, 161, 166, 0.10), transparent 60%),
+    radial-gradient(900px 500px at -10% 30%, rgba(255, 127, 107, 0.08), transparent 60%),
+    var(--sand);
+    padding: 2rem 1rem;
+}
+
+.booking-details-page .booking-details-header {
+    margin-bottom: 3rem;
+}
+
+.booking-details-page .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1.5px solid var(--sand);
+    box-shadow: 0 4px 12px rgba(11, 37, 69, 0.08);
+    transition: all 0.3s ease;
+}
+
+.booking-details-page .back-link:hover {
+    transform: translateX(-4px);
+    background: white;
+    box-shadow: 0 6px 20px rgba(28, 161, 166, 0.15);
+    color: var(--teal-700);
+}
+
+.booking-details-page .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.booking-details-page .header-content h1 {
+    color: var(--navy);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin: 0;
+    font-weight: 800;
+}
+
+.booking-details-page .status-badge.large {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-left: 6px solid;
+    background: white;
+    box-shadow: 0 6px 16px rgba(11, 37, 69, 0.1);
+}
+
+.booking-details-page .status-text {
+    font-size: 1.1rem;
+}
+
+.booking-details-page .booking-details-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.booking-details-page .details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.booking-details-page .detail-section {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1.5px solid var(--sand);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(11, 37, 69, 0.08);
+    backdrop-filter: blur(3px);
+}
+
+.booking-details-page .detail-section h2 {
+    color: var(--navy);
+    margin: 0 0 1.5rem 0;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.booking-details-page .section-icon {
+    font-size: 1.2rem;
+}
+
+/* ROOM INFORMATION SECTION - UPDATED TO MATCH SCREENSHOT */
+.booking-details-page .room-section .room-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.booking-details-page .room-image {
+    width: 100%;
+    height: 300px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(11, 37, 69, 0.15);
+}
+
+.booking-details-page .room-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.booking-details-page .room-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.booking-details-page .room-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.booking-details-page .room-info h3 {
+    color: var(--navy);
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.booking-details-page .room-type {
+    background: var(--teal);
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+.booking-details-page .room-description {
+    color: var(--ink-70);
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1.1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    border-left: 4px solid var(--teal);
+    box-shadow: 0 2px 8px rgba(11, 37, 69, 0.05);
+}
+
+.booking-details-page .divider {
+    height: 1px;
+    background: var(--sand);
+    margin: 1rem 0;
+    border: none;
+}
+
+.booking-details-page .capacity-section {
+    margin: 1rem 0;
+}
+
+.booking-details-page .capacity-title {
+    font-size: 1rem;
+    color: var(--ink-60);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.booking-details-page .capacity-value {
+    font-size: 1.3rem;
+    color: var(--navy);
+    font-weight: 700;
+}
+
+.booking-details-page .price-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.booking-details-page .price-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.25rem;
+    background: rgba(28, 161, 166, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(28, 161, 166, 0.1);
+}
+
+.booking-details-page .price-label {
+    font-size: 0.9rem;
+    color: var(--ink-70);
+    font-weight: 600;
+}
+
+.booking-details-page .price-value {
+    font-size: 1.5rem;
+    color: var(--teal);
+    font-weight: 800;
+}
+
+.booking-details-page .nights-value {
+    font-size: 1.3rem;
+    color: var(--navy);
+    font-weight: 700;
+}
+
+.booking-details-page .book-now-btn {
+    background: var(--teal);
+    color: white;
+    border: none;
+    padding: 1.25rem 2rem;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.booking-details-page .book-now-btn:hover {
+    background: var(--teal-700);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(28, 161, 166, 0.4);
+}
+
+/* Booking Details Section */
+.booking-details-page .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.booking-details-page .info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(28, 161, 166, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(28, 161, 166, 0.1);
+}
+
+.booking-details-page .info-item .label {
+    font-size: 0.85rem;
+    color: var(--ink-70);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.booking-details-page .info-item .value {
+    font-size: 1.1rem;
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.booking-details-page .info-item .value.price {
+    color: var(--teal);
+    font-size: 1.3rem;
+}
+
+.booking-details-page .customer-card,
+.booking-details-page .requests-card,
+.booking-details-page .actions-card {
+    padding: 1.5rem;
+    background: rgba(28, 161, 166, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(28, 161, 166, 0.1);
+}
+
+.booking-details-page .customer-info h3 {
+    color: var(--navy);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+}
+
+.booking-details-page .customer-email {
+    color: var(--teal);
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.booking-details-page .customer-id {
+    color: var(--ink-70);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.booking-details-page .requests-card p {
+    margin: 0;
+    color: var(--ink-70);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.booking-details-page .actions-card .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.booking-details-page .admin-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.booking-details-page .status-control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.booking-details-page .status-control label {
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 0.95rem;
+}
+
+.booking-details-page .status-select {
+    padding: 1rem;
+    border: 2px solid var(--sand);
+    border-radius: 12px;
+    background: white;
+    color: var(--navy);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.booking-details-page .status-select:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(28, 161, 166, 0.1);
+}
+
+.booking-details-page .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.booking-details-page .btn-large {
+    padding: 1.25rem 2rem;
+    font-size: 1.1rem;
+}
+
+.booking-details-page .btn-primary {
+    background: var(--teal);
+    color: white;
+    border-color: var(--teal);
+}
+
+.booking-details-page .btn-primary:hover {
+    background: #1a9ba0;
+}
+
+.booking-details-page .btn-danger {
+    background: var(--coral);
+    color: white;
+    border-color: var(--coral);
+}
+
+.booking-details-page .btn-danger:hover {
+    background: #ff6a5e;
+}
+
+.booking-details-page .btn-success {
+    background: #4CD964;
+    color: white;
+    border-color: #4CD964;
+}
+
+.booking-details-page .btn-success:hover {
+    background: #3ac952;
+}
+
+.booking-details-page .btn-outline {
+    background: transparent;
+    color: var(--teal);
+    border-color: var(--teal);
+}
+
+.booking-details-page .btn-outline:hover {
+    background: rgba(28, 161, 166, 0.1);
+}
+
+.booking-details-page .error-message {
+    background: rgba(255, 127, 107, 0.1);
+    border: 1px solid var(--coral);
+    color: var(--coral);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+}
+
+.booking-details-page .error-icon {
+    font-size: 1.2rem;
+}
+
+.booking-details-page .error-page {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 12px 32px rgba(11, 37, 69, 0.1);
+    margin: 2rem auto;
+    max-width: 500px;
+}
+
+.booking-details-page .error-page h2 {
+    color: var(--navy);
+    margin-bottom: 1rem;
+}
+
+.booking-details-page .error-page p {
+    color: var(--ink-70);
+    font-size: 1.1rem;
+}
+
+/* Status badge styles */
+.booking-details-page .status-badge.pending {
+    background: #856404;
+    color: #856404;
+    border-color: #ffeaa7;
+}
+
+.booking-details-page .status-badge.confirmed {
+    background: #0c5460;
+    color: #0c5460;
+    border-color: #b8e6f1;
+}
+
+.booking-details-page .status-badge.checked-in {
+    background: #155724;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.booking-details-page .status-badge.checked-out {
+    background: #383d41;
+    color: #383d41;
+    border-color: #d6d8db;
+}
+
+.booking-details-page .status-badge.cancelled {
+    background: #721c24;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .booking-details-page .details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-details-page {
+        padding: 1rem;
+    }
+
+    .booking-details-page .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .booking-details-page .room-image {
+        height: 250px;
+    }
+
+    .booking-details-page .price-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .booking-details-page .room-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .booking-details-page .detail-section {
+        padding: 1.5rem;
+    }
+
+    .booking-details-page .action-buttons {
+        flex-direction: column;
+    }
+
+    .booking-details-page .btn-large {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .booking-details-page .room-image {
+        height: 200px;
+    }
+
+    .booking-details-page .room-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .booking-details-page .price-value {
+        font-size: 1.3rem;
+    }
+
+    .booking-details-page .nights-value {
+        font-size: 1.1rem;
+    }
+}

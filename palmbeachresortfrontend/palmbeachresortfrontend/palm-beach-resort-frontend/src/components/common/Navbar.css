@@ -1,0 +1,213 @@
+:root {
+    /* Beach Theme */
+    --sand: #F5E9DA;
+    --teal: #1CA1A6;
+    --coral: #FF7F6B;
+    --navy: #0B2545;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, var(--teal) 0%, var(--navy) 100%);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.6rem 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styles */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--sand);
+    transition: all 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+.logo-icon {
+    font-size: 2rem;
+}
+
+.logo-text {
+    color: var(--sand);
+}
+
+/* Navigation Menu Styles */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--sand);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--coral);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--coral);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Auth Buttons */
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.login-btn {
+    color: var(--sand);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    color: var(--coral);
+}
+
+.signup-btn {
+    background: var(--teal);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(28, 161, 166, 0.3);
+}
+
+.signup-btn:hover {
+    background: var(--coral);
+    color: white;
+    box-shadow: 0 6px 12px rgba(255, 127, 107, 0.4);
+}
+
+/* Special Coral Button (Browse Menu) */
+.coral-btn {
+    background: var(--coral);
+    color: white !important;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(255, 127, 107, 0.3);
+}
+
+.coral-btn:hover {
+    background: #ff6655;
+    box-shadow: 0 6px 12px rgba(255, 127, 107, 0.4);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: var(--sand);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--navy);
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-link {
+        padding: 1rem 0;
+        font-size: 1.1rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-auth {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .login-btn,
+    .signup-btn,
+    .coral-btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1.25rem;
+    }
+}
