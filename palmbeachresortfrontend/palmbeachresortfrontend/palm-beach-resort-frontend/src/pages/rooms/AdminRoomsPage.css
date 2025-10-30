@@ -1,0 +1,369 @@
+.admin-rooms-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    min-height: 80vh;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.admin-header h1 {
+    font-size: 2.5rem;
+    color: #1e293b;
+    margin: 0;
+}
+
+.admin-header .btn-primary {
+    background: #0d9488;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.admin-header .btn-primary:hover {
+    background: #0f766e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+}
+
+/* Error Message */
+.error-message {
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error-message button {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.error-message button:hover {
+    background: #b91c1c;
+}
+
+/* No Rooms State */
+.no-rooms {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.no-rooms h3 {
+    color: #1e293b;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.no-rooms p {
+    color: #64748b;
+    margin-bottom: 2rem;
+}
+
+/* Rooms Table Container */
+.rooms-table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.rooms-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.rooms-table thead {
+    background: #f8fafc;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.rooms-table th {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rooms-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+}
+
+.rooms-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.rooms-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.rooms-table tbody tr.unavailable {
+    background: #fef2f2;
+}
+
+.rooms-table tbody tr.unavailable:hover {
+    background: #fecaca;
+}
+
+/* Room Type Badge */
+.room-type-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.room-type-badge.standard { background: #ccfbf1; color: #0f766e; }
+.room-type-badge.deluxe { background: #dbeafe; color: #1d4ed8; }
+.room-type-badge.suite { background: #f3e8ff; color: #7e22ce; }
+.room-type-badge.presidential { background: #fef3c7; color: #d97706; }
+.room-type-badge.honeymoon { background: #fce7f3; color: #db2777; }
+
+/* Status Badge */
+.status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.status.available {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status.unavailable {
+    background: #fecaca;
+    color: #991b1b;
+}
+
+/* Actions Column */
+.actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.actions .btn {
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-edit {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.btn-edit:hover {
+    background: #bfdbfe;
+    transform: translateY(-1px);
+}
+
+.btn-warning {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.btn-warning:hover {
+    background: #fde68a;
+    transform: translateY(-1px);
+}
+
+.btn-success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.btn-success:hover {
+    background: #a7f3d0;
+    transform: translateY(-1px);
+}
+
+.btn-danger {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.btn-danger:hover {
+    background: #fecaca;
+    transform: translateY(-1px);
+}
+
+/* No Data Row */
+.no-data {
+    text-align: center;
+    padding: 3rem;
+    color: #64748b;
+    font-style: italic;
+}
+
+/* Loading States */
+.loading-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    color: #64748b;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .rooms-table {
+        font-size: 0.9rem;
+    }
+
+    .rooms-table th,
+    .rooms-table td {
+        padding: 0.75rem 1rem;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-rooms-page {
+        padding: 1rem;
+    }
+
+    .admin-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .admin-header h1 {
+        font-size: 2rem;
+    }
+
+    .rooms-table-container {
+        overflow-x: auto;
+    }
+
+    .rooms-table {
+        min-width: 800px;
+    }
+
+    .rooms-table th,
+    .rooms-table td {
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .error-message {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .no-rooms {
+        padding: 2rem 1rem;
+    }
+
+    .no-rooms h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Animation for row updates */
+@keyframes highlightUpdate {
+    0% { background-color: #d1fae5; }
+    100% { background-color: transparent; }
+}
+
+.rooms-table tbody tr.updated {
+    animation: highlightUpdate 2s ease;
+}
+
+/* Empty state illustration */
+.no-rooms::before {
+    content: "🏨";
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+/* Table sorting indicators */
+.rooms-table th.sortable {
+    cursor: pointer;
+    position: relative;
+    padding-right: 2rem;
+}
+
+.rooms-table th.sortable:hover {
+    background: #f1f5f9;
+}
+
+.rooms-table th.sortable::after {
+    content: "↕";
+    position: absolute;
+    right: 0.5rem;
+    opacity: 0.5;
+}
+
+.rooms-table th.sort-asc::after {
+    content: "↑";
+    opacity: 1;
+}
+
+.rooms-table th.sort-desc::after {
+    content: "↓";
+    opacity: 1;
+}
