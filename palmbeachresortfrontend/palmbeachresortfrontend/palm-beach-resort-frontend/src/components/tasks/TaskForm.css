@@ -1,0 +1,325 @@
+.task-form-container {
+    padding: 20px 24px;
+    max-width: 700px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #F5E9DA 0%, #f8f2e8 100%);
+    min-height: auto;
+    border-radius: 15px;
+}
+
+.task-form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(11, 37, 69, 0.15);
+    border: 1px solid rgba(28, 161, 166, 0.2);
+}
+
+.form-header {
+    margin-bottom: 30px;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.form-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0B2545;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(11, 37, 69, 0.1);
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.form-header p {
+    color: #64748b;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #0B2545;
+    font-size: 0.9rem;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgba(28, 161, 166, 0.3);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    color: #0B2545;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #1CA1A6;
+    box-shadow: 0 0 0 3px rgba(28, 161, 166, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.5;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(28, 161, 166, 0.2);
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    backdrop-filter: blur(10px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #1CA1A6 0%, #16858a 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(28, 161, 166, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #16858a 0%, #147277 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(28, 161, 166, 0.4);
+}
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(28, 161, 166, 0.3);
+    color: #0B2545;
+    backdrop-filter: blur(10px);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: #1CA1A6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(28, 161, 166, 0.2);
+}
+
+.error-message {
+    color: #FF7F6B;
+    font-size: 0.875rem;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.form-help {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* Searchable Dropdown Styles */
+.searchable-dropdown {
+    position: relative;
+}
+
+.search-input-container {
+    position: relative;
+}
+
+.clear-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 1.1rem;
+    color: #64748b;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(28, 161, 166, 0.3);
+}
+
+.clear-button:hover {
+    background: rgba(255, 127, 107, 0.1);
+    color: #FF7F6B;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(28, 161, 166, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(11, 37, 69, 0.15);
+    max-height: 180px;
+    overflow-y: auto;
+    z-index: 1000;
+    margin-top: 4px;
+}
+
+.dropdown-item {
+    padding: 10px 14px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(28, 161, 166, 0.1);
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background: rgba(245, 233, 218, 0.5);
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.staff-name {
+    font-weight: 600;
+    color: #0B2545;
+    margin-bottom: 2px;
+    font-size: 0.9rem;
+}
+
+.staff-details {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.no-results {
+    color: #64748b;
+    font-style: italic;
+    text-align: center;
+    padding: 16px;
+}
+
+.assignment-info {
+    margin-top: 6px;
+    padding: 10px 12px;
+    background: rgba(28, 161, 166, 0.1);
+    border: 1px solid rgba(28, 161, 166, 0.2);
+    border-radius: 6px;
+    color: #1CA1A6;
+    font-size: 0.8rem;
+    font-weight: 500;
+    backdrop-filter: blur(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .task-form-container {
+        padding: 16px;
+    }
+
+    .task-form {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .form-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .form-header p {
+        font-size: 0.9rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+        padding: 10px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .task-form-container {
+        padding: 12px;
+    }
+
+    .task-form {
+        padding: 16px;
+    }
+
+    .form-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .form-header {
+        margin-bottom: 24px;
+    }
+}
