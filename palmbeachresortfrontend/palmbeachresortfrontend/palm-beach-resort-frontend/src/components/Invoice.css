@@ -1,0 +1,563 @@
+.invoice-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #F5E9DA 0%, #f8f2e8 100%);
+    padding: 20px;
+}
+
+.invoice-header {
+    margin-bottom: 30px;
+}
+
+.header-background {
+    background: linear-gradient(135deg, #1CA1A6 0%, #16858a 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(28, 161, 166, 0.3);
+    text-align: center;
+    position: relative;
+}
+
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #F5E9DA;
+}
+
+.header-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    color: #F5E9DA;
+    margin: 0;
+}
+
+.invoice-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.invoice-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.invoice-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(11, 37, 69, 0.15);
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+.invoice-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #F5E9DA;
+}
+
+.invoice-info h2 {
+    color: #0B2545;
+    margin-bottom: 8px;
+    font-size: 1.8rem;
+}
+
+.invoice-number {
+    color: #1CA1A6;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.invoice-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.resort-info {
+    text-align: right;
+}
+
+.resort-info h3 {
+    color: #0B2545;
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+.resort-info p {
+    color: #666;
+    margin: 2px 0;
+    font-size: 0.9rem;
+}
+
+.customer-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #F5E9DA;
+}
+
+.customer-section h3 {
+    color: #0B2545;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.customer-info p {
+    margin: 4px 0;
+    color: #666;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h3 {
+    color: #0B2545;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #1CA1A6;
+    padding-bottom: 8px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-row span:first-child {
+    color: #666;
+}
+
+.detail-row span:last-child {
+    font-weight: 600;
+    color: #0B2545;
+}
+
+.total-row {
+    border-top: 2px solid #F5E9DA;
+    margin-top: 8px;
+    padding-top: 12px;
+    font-weight: 700;
+}
+
+.grand-total {
+    font-size: 1.2rem;
+    color: #1CA1A6 !important;
+    border-top: 3px double #1CA1A6;
+}
+
+.food-order {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 4px solid #FF7F6B;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.order-number {
+    font-weight: 700;
+    color: #0B2545;
+}
+
+.order-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.order-status {
+    background: #FF7F6B;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.order-items {
+    margin-bottom: 12px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    flex: 1;
+    color: #666;
+}
+
+.item-quantity {
+    margin: 0 15px;
+    color: #999;
+}
+
+.item-price {
+    font-weight: 600;
+    color: #0B2545;
+    min-width: 80px;
+    text-align: right;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    border-top: 1px solid #e9ecef;
+    font-weight: 600;
+    color: #0B2545;
+}
+
+.food-total {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #F5E9DA;
+}
+
+.summary-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid #F5E9DA;
+}
+
+.summary-details .detail-row {
+    border-bottom-color: #dee2e6;
+}
+
+.invoice-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #F5E9DA;
+    color: #666;
+}
+
+.invoice-footer p {
+    margin: 5px 0;
+}
+
+.loading {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #F5E9DA;
+    border-left: 4px solid #1CA1A6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+.error-message {
+    background: #FFEBEE;
+    color: #F44336;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.error-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.no-invoice-message {
+    background: white;
+    padding: 60px 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(11, 37, 69, 0.15);
+    border: 2px dashed #F5E9DA;
+}
+
+.no-invoice-icon {
+    font-size: 5rem;
+    margin-bottom: 25px;
+    opacity: 0.7;
+}
+
+.no-invoice-message h3 {
+    color: #0B2545;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.no-invoice-message p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.no-invoice-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background: #1CA1A6;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #16858a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(28, 161, 166, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #1CA1A6;
+    border: 2px solid #1CA1A6;
+}
+
+.btn-outline:hover {
+    background: #1CA1A6;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .invoice-page {
+        padding: 15px;
+    }
+
+    .header-background {
+        padding: 20px 15px 20px 70px;
+    }
+
+    .back-button {
+        left: 15px;
+        top: 15px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .invoice-card {
+        padding: 20px;
+    }
+
+    .invoice-card-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .resort-info {
+        text-align: center;
+    }
+
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .invoice-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 200px;
+        justify-content: center;
+    }
+
+    .error-actions, .no-invoice-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* Add to Invoice.css */
+.no-data-message,
+.no-items-message,
+.no-orders-message {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.no-data-message p,
+.no-items-message p,
+.no-orders-message p {
+    margin: 0;
+}
+
+/* Ensure all sections are visible even with empty data */
+.room-section,
+.food-section,
+.summary-section {
+    display: block !important;
+}
+/* Booking selection styles */
+.booking-selection-panel {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.booking-selection-panel h4 {
+    margin-bottom: 15px;
+    color: #0B2545;
+}
+
+.booking-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.booking-options .btn {
+    margin-bottom: 5px;
+}
+
+.booking-selection {
+    margin: 20px 0;
+}
+
+.booking-selection h4 {
+    margin-bottom: 10px;
+    color: #0B2545;
+}
+
+/* Debug info styles */
+.debug-info {
+    background: #e8f4fd;
+    border: 1px solid #b6e0fe;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.debug-info h4 {
+    margin: 0 0 10px 0;
+    color: #0B2545;
+}
+
+.debug-info-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.debug-info-content div {
+    font-size: 14px;
+}
+
+/* No data messages */
+.no-data-message,
+.no-items-message,
+.no-orders-message {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.no-data-message p,
+.no-items-message p,
+.no-orders-message p {
+    margin: 0;
+}
