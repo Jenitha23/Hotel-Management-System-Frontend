@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { orderService } from '../../services/menuService';
-import { useNavigate } from 'react-router-dom'; // Add this import
+import { useNavigate } from 'react-router-dom'; 
 import './OrderTracking.css';
 
 const OrderTracking = () => {
@@ -8,7 +8,7 @@ const OrderTracking = () => {
     const [order, setOrder] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const navigate = useNavigate(); // Add this hook
+    const navigate = useNavigate(); 
 
     const handleTrackOrder = async (e) => {
         e.preventDefault();
@@ -100,7 +100,7 @@ const OrderTracking = () => {
                     ← Back to Dashboard
                 </button>
                 <h1>Track Your Order</h1>
-                <p>Enter your order number to track its status</p>
+                <p>Enter your order number</p>
             </div>
 
             <form onSubmit={handleTrackOrder} className="tracking-form">
