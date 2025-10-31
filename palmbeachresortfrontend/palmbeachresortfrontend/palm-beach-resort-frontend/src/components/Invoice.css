@@ -9,7 +9,7 @@
 }
 
 .header-background {
-    background: linear-gradient(135deg, #1CA1A6 0%, #16858a 100%);
+    background: linear-gradient(135deg, #0B2545 0%, #16858a 100%);
     color: white;
     padding: 30px;
     border-radius: 15px;
@@ -58,6 +58,47 @@
     margin: 0 auto;
 }
 
+/* No Invoice Message - Updated to match theme */
+.no-invoice-message {
+    background: white;
+    padding: 60px 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(11, 37, 69, 0.15);
+    border: 2px dashed #F5E9DA;
+    margin-top: 20px;
+}
+
+.no-invoice-icon {
+    font-size: 5rem;
+    margin-bottom: 25px;
+    opacity: 0.7;
+}
+
+.no-invoice-message h3 {
+    color: #0B2545;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.no-invoice-message p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.no-invoice-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Rest of the existing CSS remains exactly the same */
 .invoice-actions {
     display: flex;
     gap: 15px;
@@ -320,44 +361,6 @@
     flex-wrap: wrap;
 }
 
-.no-invoice-message {
-    background: white;
-    padding: 60px 40px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 8px 30px rgba(11, 37, 69, 0.15);
-    border: 2px dashed #F5E9DA;
-}
-
-.no-invoice-icon {
-    font-size: 5rem;
-    margin-bottom: 25px;
-    opacity: 0.7;
-}
-
-.no-invoice-message h3 {
-    color: #0B2545;
-    margin-bottom: 15px;
-    font-size: 1.8rem;
-}
-
-.no-invoice-message p {
-    color: #666;
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.no-invoice-actions {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 .btn {
     padding: 12px 24px;
     border: none;
@@ -406,61 +409,6 @@
     100% { transform: rotate(360deg); }
 }
 
-@media (max-width: 768px) {
-    .invoice-page {
-        padding: 15px;
-    }
-
-    .header-background {
-        padding: 20px 15px 20px 70px;
-    }
-
-    .back-button {
-        left: 15px;
-        top: 15px;
-        padding: 8px 12px;
-        font-size: 0.8rem;
-    }
-
-    .header-content h1 {
-        font-size: 2rem;
-    }
-
-    .invoice-card {
-        padding: 20px;
-    }
-
-    .invoice-card-header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-
-    .resort-info {
-        text-align: center;
-    }
-
-    .order-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-
-    .invoice-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn {
-        width: 200px;
-        justify-content: center;
-    }
-
-    .error-actions, .no-invoice-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-}
 /* Add to Invoice.css */
 .no-data-message,
 .no-items-message,
@@ -486,6 +434,7 @@
 .summary-section {
     display: block !important;
 }
+
 /* Booking selection styles */
 .booking-selection-panel {
     background: white;
@@ -543,21 +492,66 @@
     font-size: 14px;
 }
 
-/* No data messages */
-.no-data-message,
-.no-items-message,
-.no-orders-message {
-    text-align: center;
-    padding: 20px;
-    color: #666;
-    font-style: italic;
-    background: #f8f9fa;
-    border-radius: 8px;
-    margin: 10px 0;
-}
+@media (max-width: 768px) {
+    .invoice-page {
+        padding: 15px;
+    }
 
-.no-data-message p,
-.no-items-message p,
-.no-orders-message p {
-    margin: 0;
+    .header-background {
+        padding: 20px 15px 20px 70px;
+    }
+
+    .back-button {
+        left: 15px;
+        top: 15px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .invoice-card {
+        padding: 20px;
+    }
+
+    .invoice-card-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .resort-info {
+        text-align: center;
+    }
+
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .invoice-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 200px;
+        justify-content: center;
+    }
+
+    .error-actions, .no-invoice-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .no-invoice-message {
+        padding: 40px 20px;
+    }
+
+    .no-invoice-icon {
+        font-size: 4rem;
+    }
 }

@@ -108,8 +108,8 @@ function App() {
                         <Route path="/admin/tasks/:taskId" element={<DefaultLayout><TaskDetails /></DefaultLayout>} />
                         <Route path="/admin/tasks/edit/:taskId" element={<DefaultLayout><TaskForm /></DefaultLayout>} />
 
-                        <Route path="/customer/invoice" element={<Invoice />} />
-                        <Route path="/customer/invoice/:bookingReference" element={<Invoice />} />
+                        <Route path="/customer/invoice" element={<DefaultLayout><Invoice /></DefaultLayout>} />
+                        <Route path="/customer/invoice/:bookingReference" element={<DefaultLayout><Invoice /></DefaultLayout>} />
 
 
 

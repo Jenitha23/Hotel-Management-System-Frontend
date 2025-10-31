@@ -64,7 +64,7 @@ const Invoice = () => {
                             throw new Error('No invoices available for your bookings');
                         }
                     } else {
-                        throw new Error('No bookings found. Please book a room first.');
+                        throw new Error('You don\'t have any bill yet. Please book a room first.');
                     }
                 }
             }
@@ -127,14 +127,32 @@ const Invoice = () => {
     if (loading) {
         return (
             <div className="invoice-page">
-                <div className="loading">
-                    <div className="loading-spinner"></div>
-                    <p>Loading your invoice...</p>
+                <div className="invoice-header">
+                    <div className="header-background">
+                        <div className="header-content">
+                            <button
+                                className="back-button"
+                                onClick={() => navigate('/customer/dashboard')}
+                            >
+                                ← Back to Dashboard
+                            </button>
+                            <h1>Invoice</h1>
+                            <p>Palm Beach Resort - Luxury Stay Experience</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="invoice-content">
+                    <div className="loading">
+                        <div className="loading-spinner"></div>
+                        <p>Loading your invoice...</p>
+                    </div>
                 </div>
             </div>
         );
     }
 
+    // No bookings at all
     if (error && customerBookings.length === 0) {
         return (
             <div className="invoice-page">
@@ -156,8 +174,8 @@ const Invoice = () => {
                 <div className="invoice-content">
                     <div className="no-invoice-message">
                         <div className="no-invoice-icon">🧾</div>
-                        <h3>No Bookings Found</h3>
-                        <p>You need to book a room first to view invoices. Start by exploring our luxury accommodations.</p>
+                        <h3>No Bills Available</h3>
+                        <p>You don't have any bill yet. Please book a room first to view invoices.</p>
                         <div className="no-invoice-actions">
                             <Link to="/rooms" className="btn btn-primary">
                                 Book a Room
@@ -172,6 +190,7 @@ const Invoice = () => {
         );
     }
 
+    // Has bookings but no invoice data
     if (error && customerBookings.length > 0) {
         return (
             <div className="invoice-page">
@@ -191,10 +210,13 @@ const Invoice = () => {
                 </div>
 
                 <div className="invoice-content">
-                    <div className="error-message">
-                        <p>{error}</p>
+                    <div className="no-invoice-message">
+                        <div className="no-invoice-icon">🧾</div>
+                        <h3>No Invoice Available</h3>
+                        <p>You don't have any bill yet for your bookings.</p>
+
                         <div className="booking-selection">
-                            <h4>Select a booking to view invoice:</h4>
+                            <h4>Select a booking to check for invoice:</h4>
                             <div className="booking-options">
                                 {customerBookings.map(booking => (
                                     <button
@@ -207,7 +229,8 @@ const Invoice = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className="error-actions">
+
+                        <div className="no-invoice-actions">
                             <button onClick={loadInvoiceData} className="btn btn-primary">
                                 Try Again
                             </button>
@@ -221,14 +244,39 @@ const Invoice = () => {
         );
     }
 
+    // No invoice data found (fallback case)
     if (!invoice) {
         return (
             <div className="invoice-page">
-                <div className="error-message">
-                    <p>No invoice data found.</p>
-                    <Link to="/customer/dashboard" className="btn btn-primary">
-                        Back to Dashboard
-                    </Link>
+                <div className="invoice-header">
+                    <div className="header-background">
+                        <div className="header-content">
+                            <button
+                                className="back-button"
+                                onClick={() => navigate('/customer/dashboard')}
+                            >
+                                ← Back to Dashboard
+                            </button>
+                            <h1>Invoice</h1>
+                            <p>Palm Beach Resort - Luxury Stay Experience</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="invoice-content">
+                    <div className="no-invoice-message">
+                        <div className="no-invoice-icon">🧾</div>
+                        <h3>No Invoice Data Found</h3>
+                        <p>You don't have any bill yet. Please book a room first or contact support if you believe this is an error.</p>
+                        <div className="no-invoice-actions">
+                            <Link to="/rooms" className="btn btn-primary">
+                                Book a Room
+                            </Link>
+                            <Link to="/customer/dashboard" className="btn btn-outline">
+                                Back to Dashboard
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
