@@ -10,7 +10,7 @@
     background: linear-gradient(135deg, #0B2545 0%, #16858a 100%);
     color: white;
     padding: 25px;
-    border-radius: 15px;
+    border-radius: 16px;
     margin-bottom: 25px;
     box-shadow: 0 6px 20px rgba(28, 161, 166, 0.3);
     text-align: center;
@@ -33,7 +33,7 @@
 .tracking-form {
     background: white;
     padding: 25px;
-    border-radius: 15px;
+    border-radius: 16px;
     margin-bottom: 25px;
     box-shadow: 0 4px 20px rgba(11, 37, 69, 0.1);
     max-width: 600px;
