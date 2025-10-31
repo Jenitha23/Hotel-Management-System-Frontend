@@ -1,4 +1,3 @@
-/* src/pages/booking/AdminBookings.css */
 .admin-bookings-page {
     min-height: 100vh;
     background: radial-gradient(1200px 600px at 80% -200px, rgba(28, 161, 166, 0.10), transparent 60%),
@@ -35,7 +34,7 @@
 
 .admin-bookings-page .stat-card {
     background: rgba(255, 255, 255, 0.96);
-    border: 1.5px solid var(--sand);
+    border: 1.6px solid var(--sand);
     border-radius: 16px;
     padding: 1.5rem;
     display: flex;
@@ -234,7 +233,7 @@
     border: 1px solid var(--coral);
     color: var(--coral);
     padding: 1rem 1.5rem;
-    border-radius: 8px;
+    border-radius: 9px;
     margin-bottom: 2rem;
     display: flex;
     align-items: center;

@@ -1,4 +1,3 @@
-// src/pages/booking/AdminBookings.jsx
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { bookingService } from '../../services/bookingService';
