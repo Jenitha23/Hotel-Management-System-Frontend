@@ -13,9 +13,9 @@ const Footer = () => {
 
                     <div className="footer-section">
                         <h4>Contact Info</h4>
-                        <p>📍 123 Beach Boulevard, Palm Beach</p>
-                        <p>📞 +1 (555) 123-4567</p>
-                        <p>✉️ info@palmbeachresort.com</p>
+                        <p>📍 no 05,  Ariyalai, Jaffna</p>
+                        <p>📞 0740775737 </p>
+                        <p> ✉️ info@palmbeachresort@gmail.com </p>
                     </div>
                 </div>
 
