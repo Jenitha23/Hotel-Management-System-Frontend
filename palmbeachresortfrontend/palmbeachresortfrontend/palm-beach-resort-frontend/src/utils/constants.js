@@ -1,4 +1,4 @@
-export const API_BASE_URL = 'palm-beach-resortbackend-f4h6dwaka4fddeef.centralindia-01.azurewebsites.net';
+export const API_BASE_URL = 'https://palm-beach-resortbackend-f4h6dwaka4fddeef.centralindia-01.azurewebsites.net';
 
 export const AUTH_ENDPOINTS = {
     CUSTOMER: {

@@ -7,7 +7,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'palm-beach-resortbackend-f4h6dwaka4fddeef.centralindia-01.azurewebsites.net',
+        target: 'https://palm-beach-resortbackend-f4h6dwaka4fddeef.centralindia-01.azurewebsites.net',
         changeOrigin: true,
         secure: false,
       }
