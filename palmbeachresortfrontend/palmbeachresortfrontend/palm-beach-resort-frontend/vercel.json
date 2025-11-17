@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "http://20.192.170.13/api/:path*"
+      "destination": "palm-beach-backend-acd9hmgphegsfdee.centralindia-01.azurewebsites.net/api/:path*"
     },
     {
       "source": "/(.*)",
