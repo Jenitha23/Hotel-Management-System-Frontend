@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "palm-beach-resortbackend-f4h6dwaka4fddeef.centralindia-01.azurewebsites.net/api/:path*"
+      "destination": "https://palm-beach-resortbackend-f4h6dwaka4fddeef.centralindia-01.azurewebsites.net/api/:path*"
     },
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/"
     }
   ]
 }
