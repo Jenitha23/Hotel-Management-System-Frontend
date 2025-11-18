@@ -28,14 +28,14 @@ const CustomerBookings = () => {
             setBookings(Array.isArray(bookingsData) ? bookingsData : []);
         } catch (err) {
             console.error('Error loading bookings:', err);
-            setError(err.response?.data?.message || err.message || 'Failed to load bookings');
+            setError(err.response?.data?.message || err.message || 'Unable to load bookings');
         } finally {
             setLoading(false);
         }
     };
 
     const handleCancelBooking = async (bookingId) => {
-        if (!window.confirm('Are you sure you want to cancel this booking? This action cannot be undone.')) return;
+        if (!window.confirm('Are you sure you want to cancel this booking? Once you done, you cannot be undone.')) return;
 
         try {
             await bookingService.cancelBooking(bookingId);
