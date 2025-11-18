@@ -29,7 +29,7 @@ const StaffTasks = () => {
             setStatistics(statsData);
         } catch (error) {
             console.error('Error loading staff tasks:', error);
-            alert('Failed to load tasks');
+            alert('Unable to load tasks');
         } finally {
             setLoading(false);
         }
@@ -42,7 +42,7 @@ const StaffTasks = () => {
             await loadStaffData(); // Reload to get updated data
         } catch (error) {
             console.error('Error updating task status:', error);
-            alert('Failed to update task status');
+            alert('Unable to update task status');
         }
     };
 
