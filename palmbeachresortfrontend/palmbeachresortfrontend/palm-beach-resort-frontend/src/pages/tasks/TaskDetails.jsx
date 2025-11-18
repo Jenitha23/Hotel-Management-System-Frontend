@@ -47,7 +47,7 @@ const TaskDetails = () => {
         } catch (error) {
             console.error('Error loading REAL task details:', error);
             const errorMessage = error.response?.data?.message || error.message;
-            alert(`Failed to load task details: ${errorMessage}`);
+            alert(`Unable to load task details: ${errorMessage}`);
         } finally {
             setLoading(false);
         }
