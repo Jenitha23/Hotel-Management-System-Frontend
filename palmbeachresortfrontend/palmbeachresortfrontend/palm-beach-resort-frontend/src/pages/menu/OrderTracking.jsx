@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { orderService } from '../../services/menuService';
-import { useNavigate } from 'react-router-dom'; // Add this import
+import { useNavigate } from 'react-router-dom';
 import './OrderTracking.css';
 
 const OrderTracking = () => {
@@ -252,7 +252,7 @@ const OrderTracking = () => {
                             </div>
                             <div className="guide-step">
                                 <span className="step-number">3</span>
-                                <p>Click "Track Order" to see real-time status updates</p>
+                                <p>Click "Track Order" to see Real-time status updates</p>
                             </div>
                         </div>
                     </div>
