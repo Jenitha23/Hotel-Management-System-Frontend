@@ -93,27 +93,20 @@ const Home = () => {
 
     return (
         <div className="home-page">
+
             {/* HERO */}
             <section className="hero-section">
                 <div className="hero-background"></div>
                 <div className="hero-content">
-                    <h1 className="hero-title">
-                        Palm Beach Resort
-                    </h1>
+                    <h1 className="hero-title">Palm Beach Resort</h1>
                     <p className="hero-subtitle">
                         Where luxury meets paradise. Experience the ultimate beachfront escape with
                         world-class amenities and breathtaking ocean views.
                     </p>
+
                     <div className="hero-buttons">
-                        <Link to="/rooms" className="btn btn-primary">
-                            View Rooms
-                        </Link>
-                        <Link
-                            to={user ? '/rooms' : '/login'}
-                            className="btn btn-secondary"
-                        >
-                            Book Now
-                        </Link>
+                        <Link to="/rooms" className="btn btn-primary">View Rooms</Link>
+                        <Link to={user ? '/rooms' : '/login'} className="btn btn-secondary">Book Now</Link>
                     </div>
                 </div>
             </section>
@@ -166,7 +159,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* ABOUT (sand / teal / coral / navy theme) */}{/* ===== ABOUT (Beach Theme) ===== */}
+            {/* ABOUT SECTION */}
             <section className="about-section" id="about">
                 <div className="container">
                     <div className="about-header">
@@ -178,7 +171,6 @@ const Home = () => {
                     </div>
 
                     <div className="about-card">
-                        {/* Left: main story + details */}
                         <div className="about-main">
                             <p className="about-text">
                                 Palm Beach Resort Ceylon is a beachfront destination in Jaffna that
@@ -189,12 +181,8 @@ const Home = () => {
 
                             <ul className="about-list">
                                 <li>Scenic outdoor locations ideal for photoshoots and video coverage</li>
-                                <li>
-                                    Comfortable rooms and outdoor packages for couples, families and groups
-                                </li>
-                                <li>
-                                    Customized decorations, transport and food arrangements for special events
-                                </li>
+                                <li>Comfortable rooms and outdoor packages for couples, families and groups</li>
+                                <li>Customized decorations, transport and food arrangements for special events</li>
                             </ul>
 
                             <div className="about-contact">
@@ -204,7 +192,6 @@ const Home = () => {
                             </div>
                         </div>
 
-                        {/* Right: small highlight pills */}
                         <div className="about-facts">
                             <div className="about-pill">
                                 <h4>Outdoor Packages</h4>
@@ -219,6 +206,27 @@ const Home = () => {
                                 <p>Perfect for couples, families and corporate retreats.</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ===== GALLERY SECTION (Added) ===== */}
+            <section className="gallery-section">
+                <div className="gallery-inner">
+                    <div className="gallery-header">
+                        <h2 className="gallery-title">Resort Gallery</h2>
+                        <p className="gallery-subtitle">
+                            A glimpse of <span>Palm Beach Resort Ceylon</span>
+                        </p>
+                    </div>
+
+                    <div className="gallery-grid">
+                        {galleryImages.map((img, index) => (
+                            <div key={index} className="gallery-card">
+                                <img src={img.src} alt={img.caption} />
+                                <div className="gallery-caption">{img.caption}</div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
