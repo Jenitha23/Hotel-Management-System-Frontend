@@ -92,12 +92,11 @@
 }
 
 /* -------------------------------
-   FIXED: Section Title Alignment
+   Section Title Alignment
 -------------------------------- */
 .section-header {
     text-align: center;
     margin-bottom: 4rem;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -247,30 +246,25 @@
     }
 }
 
-/* ========= ENHANCED: ABOUT US + GALLERY SECTION ========= */
+/* ========= ABOUT US (Beach Theme) ========= */
 
 .about-section {
-    padding: 5rem 0 4.5rem;
-    background: linear-gradient(
-            180deg,
-            var(--sand-50) 0%,
-            #fffaf3 55%,
-            #ffffff 100%
-    );
+    padding: 5rem 0 3.5rem;
+    background: #F5E9DA; /* sand */
 }
 
 .about-inner {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
     gap: 3rem;
-    align-items: stretch;
+    align-items: center;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 1.75rem;
     padding: 3rem 3.25rem;
-    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* left side text column */
+/* left column (text) */
 .about-inner > div:first-child {
     display: flex;
     flex-direction: column;
@@ -280,7 +274,7 @@
 .about-heading {
     font-size: 2.4rem;
     font-weight: 700;
-    color: var(--navy-900);
+    color: #0B2545; /* deep navy */
     margin-bottom: 1.3rem;
     position: relative;
 }
@@ -292,22 +286,22 @@
     height: 3px;
     border-radius: 999px;
     margin-top: 0.6rem;
-    background: linear-gradient(90deg, var(--teal-500), var(--coral-500));
+    background: linear-gradient(90deg, #1CA1A6, #FF7F6B); /* teal -> coral */
 }
 
 .about-text {
-    color: var(--gray-700);
+    color: #304056;
     line-height: 1.8;
     margin-bottom: 1.5rem;
     max-width: 95%;
 }
 
-/* custom bullet list */
+/* bullet list styled with small teal dots */
 .about-list {
     margin: 0 0 1.5rem 0;
     padding: 0;
     list-style: none;
-    color: var(--gray-700);
+    color: #304056;
 }
 
 .about-list li {
@@ -325,13 +319,13 @@
     width: 8px;
     height: 8px;
     border-radius: 999px;
-    background: linear-gradient(135deg, var(--teal-500), var(--coral-500));
+    background: #1CA1A6; /* teal dot */
 }
 
 .about-contact {
     margin-top: 1.75rem;
     font-size: 0.98rem;
-    color: var(--navy-900);
+    color: #0B2545;
 }
 
 .about-contact p {
@@ -342,78 +336,133 @@
     font-weight: 600;
 }
 
-/* right side gallery column */
+/* right column small highlight card (optional extra info) */
+.about-highlight-card {
+    background: linear-gradient(145deg, #FFFFFF, #FFF7F1);
+    border-radius: 1.25rem;
+    padding: 1.75rem 1.5rem;
+    border: 1px solid rgba(12, 116, 117, 0.12);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+    color: #0B2545;
+}
 
-.about-gallery-title {
-    font-size: 1.6rem;
+.about-highlight-title {
+    font-size: 1.4rem;
     font-weight: 600;
-    color: var(--navy-900);
-    margin-bottom: 1.2rem;
-    display: flex;
+    margin-bottom: 0.75rem;
+    color: #0B2545;
+}
+
+.about-highlight-text {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+}
+
+.about-tagline {
+    display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
-}
-
-.about-gallery-title::before {
-    content: "";
-    width: 10px;
-    height: 10px;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+    padding: 0.35rem 0.75rem;
     border-radius: 999px;
-    background: var(--teal-500);
+    font-size: 0.8rem;
+    background: rgba(28, 161, 166, 0.1);
+    color: #1CA1A6;
 }
 
-.about-gallery {
+/* ========= RESORT GALLERY (separate section) ========= */
+
+.gallery-section {
+    padding: 0 0 5rem;
+    background: linear-gradient(
+            180deg,
+            #FFFFFF 0%,
+            #E6F7F8 45%,
+            #C9F0F1 100%
+    ); /* soft teal wash */
+}
+
+.gallery-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.gallery-title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #0B2545;
+    margin-bottom: 0.6rem;
+}
+
+.gallery-subtitle {
+    font-size: 1rem;
+    color: #30505A;
+}
+
+.gallery-subtitle span {
+    color: #1CA1A6;
+    font-weight: 600;
+}
+
+.gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 1.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.6rem;
 }
 
-/* gallery image cards */
-
-.about-image-card {
-    border-radius: 1.1rem;
-    overflow: hidden;
-    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.18);
+/* image cards in gallery */
+.gallery-card {
     position: relative;
-    background: #ffffff;
+    border-radius: 1.3rem;
+    overflow: hidden;
+    background: #FFFFFF;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.12);
     transform: translateY(0);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
-.about-image-card img {
+.gallery-card img {
     width: 100%;
-    height: 190px;
+    height: 210px;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
+    transition: transform 0.35s ease;
 }
 
-.about-image-card:hover {
+.gallery-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.22);
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.2);
 }
 
-.about-image-card:hover img {
-    transform: scale(1.04);
+.gallery-card:hover img {
+    transform: scale(1.05);
 }
 
-.about-image-caption {
+.gallery-caption {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 0.5rem 0.8rem 0.65rem;
+    padding: 0.6rem 0.9rem 0.75rem;
     background: linear-gradient(
             to top,
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.25),
             transparent
     );
-    color: #fff;
-    font-size: 0.82rem;
+    color: #FFFFFF;
+    font-size: 0.85rem;
 }
 
-/* responsive tweaks for about section */
+/* responsive tweaks */
 
 @media (max-width: 1024px) {
     .about-inner {
@@ -427,8 +476,8 @@
         grid-template-columns: 1fr;
     }
 
-    .about-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
 
@@ -440,5 +489,9 @@
 
     .about-heading {
         font-size: 2rem;
+    }
+
+    .gallery-title {
+        font-size: 1.8rem;
     }
 }
