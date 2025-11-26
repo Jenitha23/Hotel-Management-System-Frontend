@@ -91,16 +91,23 @@
     padding: 0 1rem;
 }
 
+/* -------------------------------
+   FIXED: Section Title Alignment
+-------------------------------- */
 .section-header {
     text-align: center;
     margin-bottom: 4rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
 }
 
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--navy-900);
-    margin-bottom: 1rem;
     text-align: center;
 }
 
@@ -111,6 +118,8 @@
     margin: 0 auto;
     text-align: center;
 }
+
+/* --------------------------------- */
 
 .features-section {
     padding: 5rem 0;
@@ -290,7 +299,7 @@
     font-weight: 600;
 }
 
-/* gallery */
+/* Gallery */
 
 .about-gallery-title {
     font-size: 1.5rem;
@@ -334,8 +343,6 @@
     color: #fff;
     font-size: 0.8rem;
 }
-
-/* responsive for about section */
 
 @media (max-width: 900px) {
     .about-inner {
