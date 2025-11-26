@@ -74,19 +74,19 @@ const Home = () => {
     // NEW: simple gallery data – you can replace image paths with real ones
     const galleryImages = [
         {
-            src: '/images/resort/resort-1.jpg',
+            src: 'https://www.palmbeachresortceylon.com/gallery/1708526333.jpg',
             caption: 'Sunset by the beachfront pool'
         },
         {
-            src: '/images/resort/resort-2.jpg',
+            src: 'https://www.palmbeachresortceylon.com/images/always%20ready.jpg',
             caption: 'Outdoor dining with ocean view'
         },
         {
-            src: '/images/resort/resort-3.jpg',
+            src: 'https://www.palmbeachresortceylon.com/images/Exterior1.jpg',
             caption: 'Cozy luxury suite interior'
         },
         {
-            src: '/images/resort/resort-4.jpg',
+            src: 'https://www.palmbeachresortceylon.com/images/Exterior6.jpg',
             caption: 'Garden walkways and palm trees'
         }
     ];
