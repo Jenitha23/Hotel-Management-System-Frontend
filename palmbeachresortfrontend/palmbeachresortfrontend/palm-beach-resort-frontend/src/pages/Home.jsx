@@ -71,7 +71,7 @@ const Home = () => {
         }
     ];
 
-    // NEW: simple gallery data – you can replace image paths with real ones
+    // Resort gallery images – using real resort URLs
     const galleryImages = [
         {
             src: 'https://www.palmbeachresortceylon.com/gallery/1708526333.jpg',
@@ -83,7 +83,7 @@ const Home = () => {
         },
         {
             src: 'https://www.palmbeachresortceylon.com/images/Exterior1.jpg',
-            caption: 'Cozy luxury suite interior'
+            caption: 'Cozy luxury suite exterior'
         },
         {
             src: 'https://www.palmbeachresortceylon.com/images/Exterior6.jpg',
@@ -93,6 +93,7 @@ const Home = () => {
 
     return (
         <div className="home-page">
+            {/* HERO */}
             <section className="hero-section">
                 <div className="hero-background"></div>
                 <div className="hero-content">
@@ -100,17 +101,15 @@ const Home = () => {
                         Palm Beach Resort
                     </h1>
                     <p className="hero-subtitle">
-                        Where luxury meets paradise. Experience the ultimate beachfront escape with world-class amenities and breathtaking ocean views.
+                        Where luxury meets paradise. Experience the ultimate beachfront escape with
+                        world-class amenities and breathtaking ocean views.
                     </p>
                     <div className="hero-buttons">
-                        <Link
-                            to="/rooms"
-                            className="btn btn-primary"
-                        >
+                        <Link to="/rooms" className="btn btn-primary">
                             View Rooms
                         </Link>
                         <Link
-                            to={user ? "/rooms" : "/login"}
+                            to={user ? '/rooms' : '/login'}
                             className="btn btn-secondary"
                         >
                             Book Now
@@ -119,6 +118,7 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* WHY CHOOSE US */}
             <section className="features-section">
                 <div className="container">
                     <div className="section-header">
@@ -131,9 +131,7 @@ const Home = () => {
                     <div className="features-grid">
                         {features.map((feature, index) => (
                             <div key={index} className="feature-card">
-                                <div className="feature-icon">
-                                    {feature.icon}
-                                </div>
+                                <div className="feature-icon">{feature.icon}</div>
                                 <h3 className="feature-title">{feature.title}</h3>
                                 <p className="feature-description">{feature.description}</p>
                             </div>
@@ -142,6 +140,7 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* SERVICES */}
             <section className="services-section">
                 <div className="container">
                     <div className="section-header">
@@ -150,59 +149,90 @@ const Home = () => {
                     </div>
 
                     <div className="services-grid">
-                        {services.map((service, index) => (
-                            (service.show === undefined || service.show) && (
-                                <Link
-                                    key={index}
-                                    to={service.link}
-                                    className={`service-card service-${service.color}`}
-                                >
-                                    <div className="service-icon">{service.icon}</div>
-                                    <h3 className="service-title">{service.title}</h3>
-                                    <p className="service-description">{service.description}</p>
-                                </Link>
-                            )
-                        ))}
+                        {services.map((service, index) =>
+                                (service.show === undefined || service.show) && (
+                                    <Link
+                                        key={index}
+                                        to={service.link}
+                                        className={`service-card service-${service.color}`}
+                                    >
+                                        <div className="service-icon">{service.icon}</div>
+                                        <h3 className="service-title">{service.title}</h3>
+                                        <p className="service-description">{service.description}</p>
+                                    </Link>
+                                )
+                        )}
                     </div>
                 </div>
             </section>
 
-            {/* ===== NEW: ABOUT US + GALLERY SECTION ===== */}
+            {/* ABOUT (sand / teal / coral / navy theme) */}
             <section className="about-section" id="about">
-                <div className="container about-inner">
-                    <div>
-                        <h2 className="about-heading">About Palm Beach Resort</h2>
-                        <p className="about-text">
-                            Palm Beach Resort Ceylon is a beachfront destination in Jaffna that blends
-                            natural beauty with warm hospitality. Whether it’s a family getaway,
-                            honeymoon, pre-shoot or corporate retreat, we create relaxing, memorable
-                            experiences by the ocean.
-                        </p>
+                <div className="container">
+                    <div className="about-inner">
+                        {/* Left: main about content */}
+                        <div>
+                            <h2 className="about-heading">About Palm Beach Resort</h2>
+                            <p className="about-text">
+                                Palm Beach Resort Ceylon is a beachfront destination in Jaffna that blends
+                                natural beauty with warm hospitality. Whether it’s a family getaway,
+                                honeymoon, pre-shoot or corporate retreat, we create relaxing, memorable
+                                experiences by the ocean.
+                            </p>
 
+                            <ul className="about-list">
+                                <li>Scenic outdoor locations ideal for photoshoots and video coverage</li>
+                                <li>
+                                    Comfortable rooms and outdoor packages for couples, families and groups
+                                </li>
+                                <li>
+                                    Customized decorations, transport and food arrangements for special events
+                                </li>
+                            </ul>
 
-                        <ul className="about-list">
-                            <li>Scenic outdoor locations ideal for photoshoots and video coverage</li>
-                            <li>Comfortable rooms and outdoor packages for couples, families and groups</li>
-                            <li>Customized decorations, transport and food arrangements for special events</li>
-                        </ul>
+                            <div className="about-contact">
+                                <p><span>Contact:</span> 077 725 8670</p>
+                                <p><span>Website:</span> www.palmbeachresortceylon.com</p>
+                                <p><span>Address:</span> 686, Ariyalai East, Jaffna, Sri Lanka</p>
+                            </div>
+                        </div>
 
-                        <div className="about-contact">
-                            <p><span>Contact:</span> 077 725 8670</p>
-                            <p><span>Website:</span> www.palmbeachresortceylon.com</p>
-                            <p><span>Address:</span> 686, Ariyalai East, Jaffna, Sri Lanka</p>
+                        {/* Right: highlight card */}
+                        <div className="about-highlight-card">
+                            <h3 className="about-highlight-title">Outdoor Packages</h3>
+                            <p className="about-highlight-text">
+                                From pre-shoots to full wedding days, our team handles décor, media coverage,
+                                food and transport, so you can simply enjoy the moment with your loved ones.
+                            </p>
+                            <p className="about-highlight-text">
+                                Tell us your theme, and we’ll turn our golden sand and palm-lined beachfront
+                                into your dream backdrop.
+                            </p>
+                            <div className="about-tagline">
+                                ✨ Perfect for couples, families & events
+                            </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    <div>
-                        <h3 className="about-gallery-title">Resort Gallery</h3>
-                        <div className="about-gallery">
-                            {galleryImages.map((image, index) => (
-                                <div key={index} className="about-image-card">
-                                    <img src={image.src} alt={image.caption} />
-                                    <div className="about-image-caption">{image.caption}</div>
-                                </div>
-                            ))}
-                        </div>
+            {/* RESORT GALLERY (separate section below About) */}
+            <section className="gallery-section">
+                <div className="gallery-inner">
+                    <div className="gallery-header">
+                        <h2 className="gallery-title">Resort Gallery</h2>
+                        <p className="gallery-subtitle">
+                            A glimpse of our <span>beachfront experiences</span>
+                        </p>
+                    </div>
+
+                    <div className="gallery-grid">
+                        {galleryImages.map((image, index) => (
+                            <div key={index} className="gallery-card">
+                                <img src={image.src} alt={image.caption} />
+                                <div className="gallery-caption">{image.caption}</div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
