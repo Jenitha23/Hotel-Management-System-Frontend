@@ -237,3 +237,112 @@
         padding: 3rem 0;
     }
 }
+
+/* ========= NEW: ABOUT US + GALLERY SECTION ========= */
+
+.about-section {
+    padding: 5rem 0 4rem;
+    background: var(--sand-50);
+}
+
+.about-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.about-heading {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--navy-900);
+    margin-bottom: 1rem;
+}
+
+.about-text {
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.about-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: var(--gray-700);
+    line-height: 1.8;
+}
+
+.about-list li {
+    margin-bottom: 0.4rem;
+}
+
+.about-contact {
+    margin-top: 1.75rem;
+    font-size: 0.98rem;
+    color: var(--navy-900);
+}
+
+.about-contact p {
+    margin: 0.15rem 0;
+}
+
+.about-contact span {
+    font-weight: 600;
+}
+
+/* gallery */
+
+.about-gallery-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--navy-900);
+    margin-bottom: 1rem;
+}
+
+.about-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+}
+
+.about-image-card {
+    border-radius: 0.9rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    position: relative;
+}
+
+.about-image-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.about-image-card:hover img {
+    transform: scale(1.05);
+}
+
+.about-image-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.4rem 0.7rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+/* responsive for about section */
+
+@media (max-width: 900px) {
+    .about-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .about-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+}

@@ -71,6 +71,26 @@ const Home = () => {
         }
     ];
 
+    // NEW: simple gallery data – you can replace image paths with real ones
+    const galleryImages = [
+        {
+            src: '/images/resort/resort-1.jpg',
+            caption: 'Sunset by the beachfront pool'
+        },
+        {
+            src: '/images/resort/resort-2.jpg',
+            caption: 'Outdoor dining with ocean view'
+        },
+        {
+            src: '/images/resort/resort-3.jpg',
+            caption: 'Cozy luxury suite interior'
+        },
+        {
+            src: '/images/resort/resort-4.jpg',
+            caption: 'Garden walkways and palm trees'
+        }
+    ];
+
     return (
         <div className="home-page">
             <section className="hero-section">
@@ -143,6 +163,45 @@ const Home = () => {
                                 </Link>
                             )
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ===== NEW: ABOUT US + GALLERY SECTION ===== */}
+            <section className="about-section" id="about">
+                <div className="container about-inner">
+                    <div>
+                        <h2 className="about-heading">About Palm Beach Resort</h2>
+                        <p className="about-text">
+                            Palm Beach Resort Ceylon is a beachfront destination in Jaffna that blends
+                            natural beauty with warm hospitality. Whether it’s a family getaway,
+                            honeymoon, pre-shoot or corporate retreat, we create relaxing, memorable
+                            experiences by the ocean.
+                        </p>
+
+                        <ul className="about-list">
+                            <li>Scenic outdoor locations ideal for photoshoots and video coverage</li>
+                            <li>Comfortable rooms and outdoor packages for couples, families and groups</li>
+                            <li>Customized decorations, transport and food arrangements for special events</li>
+                        </ul>
+
+                        <div className="about-contact">
+                            <p><span>Contact:</span> 077 725 8670</p>
+                            <p><span>Website:</span> www.palmbeachresortceylon.com</p>
+                            <p><span>Address:</span> 686, Ariyalai East, Jaffna, Sri Lanka</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 className="about-gallery-title">Resort Gallery</h3>
+                        <div className="about-gallery">
+                            {galleryImages.map((image, index) => (
+                                <div key={index} className="about-image-card">
+                                    <img src={image.src} alt={image.caption} />
+                                    <div className="about-image-caption">{image.caption}</div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
