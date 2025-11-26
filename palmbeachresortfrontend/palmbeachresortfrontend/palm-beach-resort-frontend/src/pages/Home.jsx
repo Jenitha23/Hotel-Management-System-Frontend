@@ -179,6 +179,7 @@ const Home = () => {
                             experiences by the ocean.
                         </p>
 
+
                         <ul className="about-list">
                             <li>Scenic outdoor locations ideal for photoshoots and video coverage</li>
                             <li>Comfortable rooms and outdoor packages for couples, families and groups</li>
