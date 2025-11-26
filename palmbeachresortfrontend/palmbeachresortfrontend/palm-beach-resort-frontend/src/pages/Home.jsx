@@ -166,18 +166,25 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* ABOUT (sand / teal / coral / navy theme) */}
+            {/* ABOUT (sand / teal / coral / navy theme) */}{/* ===== ABOUT (Beach Theme) ===== */}
             <section className="about-section" id="about">
                 <div className="container">
-                    <div className="about-inner">
-                        {/* Left: main about content */}
-                        <div>
-                            <h2 className="about-heading">About Palm Beach Resort</h2>
+                    <div className="about-header">
+                        <h2 className="about-title">About Palm Beach Resort</h2>
+                        <p className="about-lead">
+                            A serene beachfront escape in Jaffna where golden sand, palm trees and
+                            warm hospitality come together for unforgettable moments.
+                        </p>
+                    </div>
+
+                    <div className="about-card">
+                        {/* Left: main story + details */}
+                        <div className="about-main">
                             <p className="about-text">
-                                Palm Beach Resort Ceylon is a beachfront destination in Jaffna that blends
-                                natural beauty with warm hospitality. Whether it’s a family getaway,
-                                honeymoon, pre-shoot or corporate retreat, we create relaxing, memorable
-                                experiences by the ocean.
+                                Palm Beach Resort Ceylon is a beachfront destination in Jaffna that
+                                blends natural beauty with caring service. Whether it’s a family
+                                getaway, honeymoon, pre-shoot or corporate retreat, we create
+                                relaxing, memorable experiences by the ocean.
                             </p>
 
                             <ul className="about-list">
@@ -197,45 +204,25 @@ const Home = () => {
                             </div>
                         </div>
 
-                        {/* Right: highlight card */}
-                        <div className="about-highlight-card">
-                            <h3 className="about-highlight-title">Outdoor Packages</h3>
-                            <p className="about-highlight-text">
-                                From pre-shoots to full wedding days, our team handles décor, media coverage,
-                                food and transport, so you can simply enjoy the moment with your loved ones.
-                            </p>
-                            <p className="about-highlight-text">
-                                Tell us your theme, and we’ll turn our golden sand and palm-lined beachfront
-                                into your dream backdrop.
-                            </p>
-                            <div className="about-tagline">
-                                ✨ Perfect for couples, families & events
+                        {/* Right: small highlight pills */}
+                        <div className="about-facts">
+                            <div className="about-pill">
+                                <h4>Outdoor Packages</h4>
+                                <p>Photoshoots, video coverage, décor & more for your special day.</p>
+                            </div>
+                            <div className="about-pill">
+                                <h4>Beachfront Location</h4>
+                                <p>Step straight from your room onto soft sand and ocean views.</p>
+                            </div>
+                            <div className="about-pill">
+                                <h4>Events & Getaways</h4>
+                                <p>Perfect for couples, families and corporate retreats.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* RESORT GALLERY (separate section below About) */}
-            <section className="gallery-section">
-                <div className="gallery-inner">
-                    <div className="gallery-header">
-                        <h2 className="gallery-title">Resort Gallery</h2>
-                        <p className="gallery-subtitle">
-                            A glimpse of our <span>beachfront experiences</span>
-                        </p>
-                    </div>
-
-                    <div className="gallery-grid">
-                        {galleryImages.map((image, index) => (
-                            <div key={index} className="gallery-card">
-                                <img src={image.src} alt={image.caption} />
-                                <div className="gallery-caption">{image.caption}</div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };
