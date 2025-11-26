@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import './Home.css';
@@ -91,22 +91,53 @@ const Home = () => {
         }
     ];
 
+    const [lightboxIndex, setLightboxIndex] = useState(null);
+
+    const openLightbox = (index) => {
+        setLightboxIndex(index);
+    };
+
+    const closeLightbox = () => {
+        setLightboxIndex(null);
+    };
+
+    const showPrev = (e) => {
+        e.stopPropagation();
+        setLightboxIndex((prev) =>
+            prev === 0 ? galleryImages.length - 1 : prev - 1
+        );
+    };
+
+    const showNext = (e) => {
+        e.stopPropagation();
+        setLightboxIndex((prev) =>
+            prev === galleryImages.length - 1 ? 0 : prev + 1
+        );
+    };
+
     return (
         <div className="home-page">
-
             {/* HERO */}
             <section className="hero-section">
                 <div className="hero-background"></div>
                 <div className="hero-content">
-                    <h1 className="hero-title">Palm Beach Resort</h1>
+                    <h1 className="hero-title">
+                        Palm Beach Resort
+                    </h1>
                     <p className="hero-subtitle">
                         Where luxury meets paradise. Experience the ultimate beachfront escape with
                         world-class amenities and breathtaking ocean views.
                     </p>
-
                     <div className="hero-buttons">
-                        <Link to="/rooms" className="btn btn-primary">View Rooms</Link>
-                        <Link to={user ? '/rooms' : '/login'} className="btn btn-secondary">Book Now</Link>
+                        <Link to="/rooms" className="btn btn-primary">
+                            View Rooms
+                        </Link>
+                        <Link
+                            to={user ? '/rooms' : '/login'}
+                            className="btn btn-secondary"
+                        >
+                            Book Now
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -159,7 +190,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* ABOUT SECTION */}
+            {/* ABOUT (Beach Theme) */}
             <section className="about-section" id="about">
                 <div className="container">
                     <div className="about-header">
@@ -171,6 +202,7 @@ const Home = () => {
                     </div>
 
                     <div className="about-card">
+                        {/* Left: main story + details */}
                         <div className="about-main">
                             <p className="about-text">
                                 Palm Beach Resort Ceylon is a beachfront destination in Jaffna that
@@ -181,8 +213,12 @@ const Home = () => {
 
                             <ul className="about-list">
                                 <li>Scenic outdoor locations ideal for photoshoots and video coverage</li>
-                                <li>Comfortable rooms and outdoor packages for couples, families and groups</li>
-                                <li>Customized decorations, transport and food arrangements for special events</li>
+                                <li>
+                                    Comfortable rooms and outdoor packages for couples, families and groups
+                                </li>
+                                <li>
+                                    Customized decorations, transport and food arrangements for special events
+                                </li>
                             </ul>
 
                             <div className="about-contact">
@@ -192,6 +228,7 @@ const Home = () => {
                             </div>
                         </div>
 
+                        {/* Right: small highlight pills */}
                         <div className="about-facts">
                             <div className="about-pill">
                                 <h4>Outdoor Packages</h4>
@@ -210,7 +247,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* ===== GALLERY SECTION (Added) ===== */}
+            {/* ===== RESORT GALLERY ===== */}
             <section className="gallery-section">
                 <div className="gallery-inner">
                     <div className="gallery-header">
@@ -222,7 +259,11 @@ const Home = () => {
 
                     <div className="gallery-grid">
                         {galleryImages.map((img, index) => (
-                            <div key={index} className="gallery-card">
+                            <div
+                                key={index}
+                                className="gallery-card"
+                                onClick={() => openLightbox(index)}
+                            >
                                 <img src={img.src} alt={img.caption} />
                                 <div className="gallery-caption">{img.caption}</div>
                             </div>
@@ -231,6 +272,39 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* ===== LIGHTBOX MODAL ===== */}
+            {lightboxIndex !== null && (
+                <div className="lightbox-overlay" onClick={closeLightbox}>
+                    <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+                        <button
+                            className="lightbox-close"
+                            onClick={closeLightbox}
+                            aria-label="Close"
+                        >
+                            ×
+                        </button>
+
+                        <img
+                            className="lightbox-image"
+                            src={galleryImages[lightboxIndex].src}
+                            alt={galleryImages[lightboxIndex].caption}
+                        />
+
+                        <p className="lightbox-caption">
+                            {galleryImages[lightboxIndex].caption}
+                        </p>
+
+                        <div className="lightbox-nav">
+                            <button className="lightbox-nav-btn" onClick={showPrev}>
+                                ‹ Prev
+                            </button>
+                            <button className="lightbox-nav-btn" onClick={showNext}>
+                                Next ›
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
