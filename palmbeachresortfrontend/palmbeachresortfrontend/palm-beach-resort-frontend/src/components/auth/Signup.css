@@ -202,9 +202,9 @@
     color: #ffffff;
     border: none;
     padding: 0.85rem 1.5rem;
-    border-radius: 10px;
+    border-radius: 100px;
     font-size: 1rem;
-    font-weight: 900;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 0.5rem;

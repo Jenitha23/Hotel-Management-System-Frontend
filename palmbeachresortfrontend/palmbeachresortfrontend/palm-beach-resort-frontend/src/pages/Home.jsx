@@ -74,7 +74,7 @@ const Home = () => {
     // Resort gallery images – using real resort URLs
     const galleryImages = [
         {
-            src: 'https://www.palmbeachresortceylon.com/gallery/1708526333.jpg',
+            src: 'https://palm-beach-resort-ceylon.srilankahotel.net/data/Photos/700x500w/15313/1531354/1531354531.JPEG',
             caption: 'Sunset by the beachfront pool'
         },
         {
@@ -86,7 +86,23 @@ const Home = () => {
             caption: 'Cozy luxury suite exterior'
         },
         {
-            src: 'https://www.palmbeachresortceylon.com/images/Exterior6.jpg',
+            src: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/532290957.jpg?k=97763541a2eb4c8e1602c0b198726bb29d93720cdd9b9a0606858a566eb327f3&o=',
+            caption: 'Garden walkways and palm trees'
+        },
+        {
+            src: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/532290957.jpg?k=97763541a2eb4c8e1602c0b198726bb29d93720cdd9b9a0606858a566eb327f3&o=',
+            caption: 'Garden walkways and palm trees'
+        },
+        {
+            src: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/517442272.jpg?k=f6f620cc7fbef048aa3e5f18638e6e21fe521fa448f6d37770eb7da5b44bd5b3&o=',
+            caption: 'Garden walkways and palm trees'
+        },
+        {
+            src: 'https://imgservice.casai.com/375x250/reecha-hotel-mullai-lk-kilinochchi-bc-10004583-0.jpg',
+            caption: 'Garden walkways and palm trees'
+        },
+        {
+            src: 'https://imgservice.treehouserentals.com/500x245/jeyaranjanam-illam-lk-jaffna-bc-12988789-0.jpg',
             caption: 'Garden walkways and palm trees'
         }
     ];
