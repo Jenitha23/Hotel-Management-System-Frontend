@@ -92,6 +92,7 @@ const Home = () => {
     ];
 
     const [lightboxIndex, setLightboxIndex] = useState(null);
+    const [isSpaModalOpen, setIsSpaModalOpen] = useState(false);
 
     const openLightbox = (index) => {
         setLightboxIndex(index);
@@ -113,6 +114,17 @@ const Home = () => {
         setLightboxIndex((prev) =>
             prev === galleryImages.length - 1 ? 0 : prev + 1
         );
+    };
+
+    const handleServiceClick = (e, service) => {
+        if (service.title === 'Spa & Wellness') {
+            e.preventDefault();
+            setIsSpaModalOpen(true);
+        }
+    };
+
+    const closeSpaModal = () => {
+        setIsSpaModalOpen(false);
     };
 
     return (
@@ -179,6 +191,7 @@ const Home = () => {
                                         key={index}
                                         to={service.link}
                                         className={`service-card service-${service.color}`}
+                                        onClick={(e) => handleServiceClick(e, service)}
                                     >
                                         <div className="service-icon">{service.icon}</div>
                                         <h3 className="service-title">{service.title}</h3>
@@ -189,6 +202,35 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* SPA & WELLNESS COMING SOON MODAL */}
+            {isSpaModalOpen && (
+                <div className="coming-soon-overlay" onClick={closeSpaModal}>
+                    <div className="coming-soon-modal" onClick={(e) => e.stopPropagation()}>
+                        <button
+                            className="coming-soon-close"
+                            onClick={closeSpaModal}
+                            aria-label="Close"
+                        >
+                            ×
+                        </button>
+                        <h3 className="coming-soon-title">Spa & Wellness – Coming Soon</h3>
+                        <p className="coming-soon-text">
+                            Our <span className="coming-soon-highlight">Spa & Wellness</span> experience is
+                            currently under development. Soon you&apos;ll be able to book relaxing massages,
+                            wellness treatments, and beachside spa packages right from this portal.
+                        </p>
+                        <div className="coming-soon-actions">
+                            <button
+                                className="coming-soon-ok"
+                                onClick={closeSpaModal}
+                            >
+                                Okay, got it
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* ABOUT (Beach Theme) */}
             <section className="about-section" id="about">
