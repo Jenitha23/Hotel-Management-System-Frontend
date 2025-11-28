@@ -79,9 +79,6 @@ const RoomsPage = () => {
         return (
             <div className="rooms-page">
                 <div className="rooms-header">
-                    <button className="back-button" onClick={handleBackToHome}>
-                        ← Back to Home
-                    </button>
                     <h1>Our Luxury Rooms</h1>
                     <p>Loading available rooms...</p>
                 </div>

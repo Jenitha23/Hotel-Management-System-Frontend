@@ -120,10 +120,14 @@ const MenuPage = () => {
         navigate('/track-order');
     };
 
+    const handleLogin = () => {
+        navigate('/login');
+    };
+
     // Function to get user-friendly error message
     const getCartErrorMessage = (error) => {
         if (error?.includes('401')) {
-            return 'Please log in to order food';
+            return 'Please login to order food';
         }
         return error || 'An error occurred with your cart';
     };
@@ -169,7 +173,9 @@ const MenuPage = () => {
             {cartError && (
                 <div className="error-banner">
                     <span>{getCartErrorMessage(cartError)}</span>
-                    <button onClick={refreshCart} className="retry-btn">Retry</button>
+                    <button onClick={cartError?.includes('401') ? handleLogin : refreshCart} className="login-btn">
+                        {cartError?.includes('401') ? 'Login' : 'Retry'}
+                    </button>
                 </div>
             )}
 
