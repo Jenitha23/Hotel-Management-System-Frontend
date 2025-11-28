@@ -16,13 +16,11 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url('https://res.cloudinary.com/gather-app-prod/image/upload/a_0,c_crop,h_1721,w_3278,x_0,y_0/ar_16:9,c_crop,f_auto,g_faces:auto,h_1721,q_auto/c_limit,w_1920/v1/prod/user_provided/case/1165487/case/1749078767050-Q6jPaZWoxNx');
+    url('https://w0.peakpx.com/wallpaper/215/833/HD-wallpaper-hawaii-beach-palm-trees-and-sunset-beach-trees-hawii-sunset.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    filter: blur(3px);
-
-
+    filter: blur(2px);
 }
 
 .hero-content {

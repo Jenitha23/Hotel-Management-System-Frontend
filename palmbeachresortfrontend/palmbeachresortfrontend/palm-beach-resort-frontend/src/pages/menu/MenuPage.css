@@ -86,10 +86,10 @@
 }
 
 .error-banner {
-    background: #FFEBEE;
-    color: #F44336;
+    background: linear-gradient(135deg, #0B2545 0%, #16858a 100%, #1CA1A6 0%);
+    color: #FFEBEE;
     padding: 15px 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
@@ -97,7 +97,7 @@
 }
 
 .retry-btn {
-    background: #F44336;
+    background: linear-gradient(135deg, #FF7F6B 0%, #ff6b52 100%);
     color: white;
     border: none;
     padding: 8px 16px;
@@ -139,8 +139,8 @@
 
 .cart-icon {
     position: fixed;
-    top: 30px; /* Adjusted for new header */
-    right: 20px;
+    top: 150px; /* Adjusted for new header */
+    right: 50px;
     background: linear-gradient(135deg, #FF7F6B 0%, #ff6b52 100%);
     color: white;
     width: 55px;

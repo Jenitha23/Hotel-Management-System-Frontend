@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Add this import
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import MenuItemCard from '../../components/menu/MenuItemCard';
 import CartSidebar from '../../components/menu/CartSidebar';
@@ -11,7 +10,7 @@ import './MenuPage.css';
 
 const MenuPage = () => {
     const { user } = useAuth();
-    const navigate = useNavigate(); // Add navigation hook
+    const navigate = useNavigate();
     const [menuItems, setMenuItems] = useState([]);
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('ALL');
@@ -95,14 +94,7 @@ const MenuPage = () => {
             // SUCCESS - Show confirmation and navigate
             alert(`Order placed successfully! Order #: ${order.orderNumber}`);
 
-            // Option 1: Navigate directly to order history
             navigate('/customer/orders');
-
-            // Option 2: Navigate to order tracking for this specific order
-            // navigate(`/track-order?orderNumber=${order.orderNumber}`);
-
-            // Option 3: Show success modal with navigation options
-            // showOrderSuccessModal(order);
 
             setIsCartOpen(false);
             await refreshCart();
@@ -113,15 +105,6 @@ const MenuPage = () => {
             console.error('Order placement error:', err);
         } finally {
             setPlacingOrder(false);
-        }
-    };
-
-    // Optional: Show success modal with navigation options
-    const showOrderSuccessModal = (order) => {
-        if (window.confirm(`Order #${order.orderNumber} placed successfully!\n\nView order history or track this order? \n\nClick OK for Order History, Cancel for Order Tracking`)) {
-            navigate('/customer/orders');
-        } else {
-            navigate('/track-order', { state: { orderNumber: order.orderNumber } });
         }
     };
 
@@ -137,6 +120,14 @@ const MenuPage = () => {
         navigate('/track-order');
     };
 
+    // Function to get user-friendly error message
+    const getCartErrorMessage = (error) => {
+        if (error?.includes('401')) {
+            return 'Please log in to order food';
+        }
+        return error || 'An error occurred with your cart';
+    };
+
     const filteredItems = selectedCategory === 'ALL'
         ? menuItems
         : menuItems.filter(item => item.category === selectedCategory);
@@ -146,7 +137,6 @@ const MenuPage = () => {
             {/* Custom Header with Back Button */}
             <div className="menu-header">
                 <div className="header-content">
-
                     <div className="header-center">
                         <h1 className="menu-title">Beach Resort Menu</h1>
                         <p className="menu-subtitle">Fresh ingredients, ocean-inspired flavors</p>
@@ -178,7 +168,7 @@ const MenuPage = () => {
 
             {cartError && (
                 <div className="error-banner">
-                    <span>Cart Error: {cartError}</span>
+                    <span>{getCartErrorMessage(cartError)}</span>
                     <button onClick={refreshCart} className="retry-btn">Retry</button>
                 </div>
             )}
