@@ -28,6 +28,7 @@ import StaffTasks from './pages/tasks/StaffTasks';
 import TaskDetails from './pages/tasks/TaskDetails';
 import TaskForm from './components/tasks/TaskForm';
 import Invoice from './components/Invoice';
+import StaffManagement from './components/admin/StaffManagement';
 import './App.css';
 
 const ProtectedRoute = ({ children, allowedRoles = [] }) => {
@@ -111,8 +112,7 @@ function App() {
                         <Route path="/customer/invoice" element={<DefaultLayout><Invoice /></DefaultLayout>} />
                         <Route path="/customer/invoice/:bookingReference" element={<DefaultLayout><Invoice /></DefaultLayout>} />
 
-
-
+                        <Route path="/admin/staff" element={<StaffManagement />} />
 
                         {/* Dashboard Routes with Default Layout */}
                         <Route
