@@ -369,16 +369,7 @@ const StaffManagement = () => {
                     <h1>Staff Management</h1>
                     <p>View and manage staff accounts</p>
                 </div>
-                <div className="header-actions">
-                    <button
-                        className="btn btn-teal"
-                        onClick={loadStaffMembers}
-                        disabled={loading}
-                    >
-                        {loading ? '🔄 Refreshing...' : '🔄 Refresh'}
-                    </button>
-                </div>
-            </div>
+               </div>
 
             {/* Dashboard Stats */}
             <div className="staff-stats">
