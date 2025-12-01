@@ -29,6 +29,8 @@ import TaskDetails from './pages/tasks/TaskDetails';
 import TaskForm from './components/tasks/TaskForm';
 import Invoice from './components/Invoice';
 import StaffManagement from './components/admin/StaffManagement';
+import AdminLogin from './components/AdminLogin';
+import StaffLogin from './components/StaffLogin';
 import './App.css';
 
 const ProtectedRoute = ({ children, allowedRoles = [] }) => {
@@ -78,6 +80,15 @@ function App() {
                         <Route path="/" element={<DefaultLayout><Home /></DefaultLayout>} />
                         <Route path="/login" element={<DefaultLayout><Login /></DefaultLayout>} />
                         <Route path="/signup" element={<DefaultLayout><Signup /></DefaultLayout>} />
+
+
+                        {/* Hidden Admin/Staff Routes */}
+                        <Route path="/admin-login" element={<DefaultLayout><AdminLogin /></DefaultLayout>} />
+                        <Route path="/staff-login" element={<DefaultLayout><StaffLogin /></DefaultLayout>} />
+
+                        {/* Protected Admin Routes */}
+                        <Route path="/admin/dashboard" element={<DefaultLayout><AdminDashboard /></DefaultLayout>} />
+                        <Route path="/admin/staff" element={<DefaultLayout><StaffManagement /></DefaultLayout>} />
 
                         {/* Room Routes with Default Layout */}
                         <Route path="/rooms" element={<DefaultLayout><RoomsPage /></DefaultLayout>} />
