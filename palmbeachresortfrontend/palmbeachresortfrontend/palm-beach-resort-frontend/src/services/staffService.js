@@ -12,8 +12,9 @@ export const staffService = {
 
     // Delete staff - ✅ MATCHES BACKEND: DELETE /api/staff/{id}
     deleteStaff: (id) =>
-        api.delete(`/api/staff/${id}`)
+        api.delete(`/api/staff/${id}`),
 
-    // Note: Create staff endpoint not available in current backend
-    // Staff creation should be handled through authentication/registration system
+    // ✅ NEW: Create staff account - MATCHES BACKEND: POST /api/staff/auth/register
+    createStaff: (staffData) =>
+        api.post('/api/staff/auth/register', staffData)
 };

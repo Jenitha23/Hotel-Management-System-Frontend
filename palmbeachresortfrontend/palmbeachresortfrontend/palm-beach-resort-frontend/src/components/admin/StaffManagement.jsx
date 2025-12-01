@@ -13,6 +13,18 @@ const StaffManagement = () => {
     const [viewMode, setViewMode] = useState('grid');
     const [searchTerm, setSearchTerm] = useState('');
 
+    // Create staff form states
+    const [showCreateForm, setShowCreateForm] = useState(false);
+    const [newStaff, setNewStaff] = useState({
+        fullName: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+        role: 'STAFF',
+        phone: ''
+    });
+    const [creating, setCreating] = useState(false);
+
     // Debug user info
     useEffect(() => {
         console.log('🔍 DEBUG - Current User:', user);
@@ -117,6 +129,103 @@ const StaffManagement = () => {
 
     const closeStaffDetails = () => {
         setSelectedStaff(null);
+    };
+
+    // Create new staff account
+    const handleCreateStaff = async () => {
+        // Validation
+        if (!newStaff.fullName.trim()) {
+            alert('Please enter full name');
+            return;
+        }
+        if (!newStaff.email.trim()) {
+            alert('Please enter email address');
+            return;
+        }
+        if (!newStaff.password) {
+            alert('Please enter password');
+            return;
+        }
+        if (newStaff.password !== newStaff.confirmPassword) {
+            alert('Passwords do not match');
+            return;
+        }
+        if (newStaff.password.length < 6) {
+            alert('Password must be at least 6 characters');
+            return;
+        }
+
+        try {
+            setCreating(true);
+
+            // Prepare staff data for API
+            const staffData = {
+                fullName: newStaff.fullName.trim(),
+                email: newStaff.email.trim().toLowerCase(),
+                password: newStaff.password,
+                role: newStaff.role,
+                phone: newStaff.phone.trim() || null
+            };
+
+            console.log('🔄 Creating staff:', staffData);
+
+            const response = await staffService.createStaff(staffData);
+
+            if (response.data.success) {
+                // Show success message with credentials
+                const successMessage = `✅ Staff Account Created Successfully!
+                
+                Staff Details:
+                • Name: ${staffData.fullName}
+                • Email: ${staffData.email}
+                • Role: ${staffData.role}
+                • Password: ${staffData.password}
+                
+                Please provide these credentials to the staff member.
+                They should change their password on first login.`;
+
+                alert(successMessage);
+
+                // Reset form
+                setNewStaff({
+                    fullName: '',
+                    email: '',
+                    password: '',
+                    confirmPassword: '',
+                    role: 'STAFF',
+                    phone: ''
+                });
+                setShowCreateForm(false);
+
+                // Refresh staff list
+                loadStaffMembers();
+            } else {
+                alert(`❌ Failed to create staff: ${response.data.message}`);
+            }
+        } catch (error) {
+            console.error('Create staff error:', error);
+
+            if (error.response) {
+                // Server responded with error
+                if (error.response.status === 400) {
+                    alert(`❌ Validation error: ${error.response.data.message || 'Invalid data'}`);
+                } else if (error.response.status === 409) {
+                    alert('❌ Email already exists. Please use a different email.');
+                } else if (error.response.status === 403) {
+                    alert('❌ You do not have permission to create staff accounts.');
+                } else {
+                    alert(`❌ Server error: ${error.response.status}`);
+                }
+            } else if (error.request) {
+                // Request made but no response
+                alert('❌ No response from server. Please check your connection.');
+            } else {
+                // Other errors
+                alert(`❌ Error: ${error.message}`);
+            }
+        } finally {
+            setCreating(false);
+        }
     };
 
     // Filter staff based on search
@@ -300,6 +409,116 @@ const StaffManagement = () => {
                 </div>
             </div>
 
+            {/* Create Staff Form or Button */}
+            {showCreateForm ? (
+                <div className="create-staff-form">
+                    <div className="form-header">
+                        <h3>👤 Create New Staff Account</h3>
+                        <p>Add a new staff member to the system</p>
+                    </div>
+
+                    <div className="form-group">
+                        <label>Full Name *</label>
+                        <input
+                            type="text"
+                            value={newStaff.fullName}
+                            onChange={(e) => setNewStaff({...newStaff, fullName: e.target.value})}
+                            placeholder="Enter staff full name"
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Email Address *</label>
+                        <input
+                            type="email"
+                            value={newStaff.email}
+                            onChange={(e) => setNewStaff({...newStaff, email: e.target.value})}
+                            placeholder="staff@example.com"
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Password *</label>
+                        <input
+                            type="password"
+                            value={newStaff.password}
+                            onChange={(e) => setNewStaff({...newStaff, password: e.target.value})}
+                            placeholder="Enter password (min. 6 characters)"
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Confirm Password *</label>
+                        <input
+                            type="password"
+                            value={newStaff.confirmPassword}
+                            onChange={(e) => setNewStaff({...newStaff, confirmPassword: e.target.value})}
+                            placeholder="Confirm password"
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Role</label>
+                        <select
+                            value={newStaff.role}
+                            onChange={(e) => setNewStaff({...newStaff, role: e.target.value})}
+                        >
+                            <option value="STAFF">General Staff</option>
+                            <option value="MANAGER">Manager</option>
+                            <option value="RECEPTIONIST">Receptionist</option>
+                            <option value="HOUSEKEEPING">Housekeeping</option>
+                            <option value="KITCHEN">Kitchen Staff</option>
+                        </select>
+                    </div>
+
+                    <div className="form-group">
+                        <label>Phone Number (Optional)</label>
+                        <input
+                            type="tel"
+                            value={newStaff.phone}
+                            onChange={(e) => setNewStaff({...newStaff, phone: e.target.value})}
+                            placeholder="+1234567890"
+                        />
+                    </div>
+
+                    <div className="form-actions">
+                        <button
+                            className="btn btn-teal"
+                            onClick={handleCreateStaff}
+                            disabled={creating}
+                        >
+                            {creating ? '🔄 Creating...' : '✅ Create Staff Account'}
+                        </button>
+                        <button
+                            className="btn btn-outline"
+                            onClick={() => {
+                                setShowCreateForm(false);
+                                setNewStaff({
+                                    fullName: '',
+                                    email: '',
+                                    password: '',
+                                    confirmPassword: '',
+                                    role: 'STAFF',
+                                    phone: ''
+                                });
+                            }}
+                            disabled={creating}
+                        >
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            ) : (
+                <div className="create-staff-prompt">
+                    <button
+                        className="btn btn-teal"
+                        onClick={() => setShowCreateForm(true)}
+                    >
+                        ➕ Create New Staff Account
+                    </button>
+                </div>
+            )}
+
             {/* Search and Controls */}
             <div className="controls-bar">
                 <div className="search-box">
@@ -475,10 +694,24 @@ const StaffManagement = () => {
                         </div>
                     </div>
                     <div className="instruction-item">
+                        <div className="instruction-icon">➕</div>
+                        <div className="instruction-text">
+                            <strong>Create Accounts</strong>
+                            <p>Add new staff members with different roles</p>
+                        </div>
+                    </div>
+                    <div className="instruction-item">
                         <div className="instruction-icon">🗑️</div>
                         <div className="instruction-text">
                             <strong>Delete Accounts</strong>
                             <p>Remove staff accounts (cannot delete your own)</p>
+                        </div>
+                    </div>
+                    <div className="instruction-item">
+                        <div className="instruction-icon">🔐</div>
+                        <div className="instruction-text">
+                            <strong>Credentials</strong>
+                            <p>New staff receive login credentials via email</p>
                         </div>
                     </div>
                 </div>
@@ -494,10 +727,10 @@ const StaffManagement = () => {
                         <strong>Backend Status:</strong> Connected ✅
                     </p>
                     <p>
-                        <strong>Available Actions:</strong> View Staff Details, Delete Staff Accounts
+                        <strong>Available Actions:</strong> View Staff Details, Create New Staff, Delete Staff Accounts
                     </p>
                     <p>
-                        <strong>Note:</strong> Staff account creation is handled through the authentication system.
+                        <strong>Note:</strong> Staff will receive their login credentials after account creation.
                     </p>
                 </div>
             </div>

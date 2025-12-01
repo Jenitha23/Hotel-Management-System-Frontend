@@ -1026,3 +1026,112 @@
         font-size: 9px;
     }
 }
+/* Add these styles to your existing StaffManagement.css file */
+
+/* Create Staff Prompt */
+.staff-management .create-staff-prompt {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 25px;
+    background: white;
+    border-radius: 12px;
+    border: 2px dashed var(--staff-sand);
+    transition: all 0.3s ease;
+}
+
+.staff-management .create-staff-prompt:hover {
+    border-color: var(--staff-teal);
+    background: var(--staff-light-teal);
+    transform: translateY(-2px);
+}
+
+/* Create Staff Form */
+.staff-management .create-staff-form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 2px solid var(--staff-teal);
+    box-shadow: 0 4px 20px rgba(28, 161, 166, 0.15);
+}
+
+.staff-management .create-staff-form .form-header {
+    margin-bottom: 25px;
+}
+
+.staff-management .create-staff-form .form-header h3 {
+    margin: 0 0 8px 0;
+    color: var(--staff-navy);
+    font-size: 1.5rem;
+}
+
+.staff-management .create-staff-form .form-header p {
+    color: var(--staff-teal);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.staff-management .create-staff-form .form-group {
+    margin-bottom: 20px;
+}
+
+.staff-management .create-staff-form .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--staff-navy);
+    font-size: 0.9rem;
+}
+
+.staff-management .create-staff-form .form-group input,
+.staff-management .create-staff-form .form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--staff-sand);
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.staff-management .create-staff-form .form-group input:focus,
+.staff-management .create-staff-form .form-group select:focus {
+    outline: none;
+    border-color: var(--staff-teal);
+    box-shadow: 0 0 0 3px rgba(28, 161, 166, 0.1);
+}
+
+.staff-management .create-staff-form .form-group small {
+    color: var(--staff-teal);
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+.staff-management .create-staff-form .form-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Form specific button styles */
+.staff-management .create-staff-form .btn {
+    min-width: 150px;
+    justify-content: center;
+}
+
+/* Responsive design for create form */
+@media (max-width: 768px) {
+    .staff-management .create-staff-form {
+        padding: 20px;
+    }
+
+    .staff-management .create-staff-form .form-actions {
+        flex-direction: column;
+    }
+
+    .staff-management .create-staff-form .btn {
+        min-width: 100%;
+    }
+}
