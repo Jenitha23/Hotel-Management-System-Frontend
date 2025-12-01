@@ -112,7 +112,7 @@ function App() {
                         <Route path="/customer/invoice" element={<DefaultLayout><Invoice /></DefaultLayout>} />
                         <Route path="/customer/invoice/:bookingReference" element={<DefaultLayout><Invoice /></DefaultLayout>} />
 
-                        <Route path="/admin/staff" element={<StaffManagement />} />
+                        <Route path="/admin/staff" element={<DefaultLayout><StaffManagement /></DefaultLayout>} />
 
                         {/* Dashboard Routes with Default Layout */}
                         <Route
