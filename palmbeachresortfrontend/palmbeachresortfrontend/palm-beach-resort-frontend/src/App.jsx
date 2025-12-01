@@ -89,6 +89,7 @@ function App() {
                         {/* Protected Admin Routes */}
                         <Route path="/admin/dashboard" element={<DefaultLayout><AdminDashboard /></DefaultLayout>} />
                         <Route path="/admin/staff" element={<DefaultLayout><StaffManagement /></DefaultLayout>} />
+                        <Route path="/Staff/dashboard" element={<DefaultLayout><StaffDashboard /></DefaultLayout>} />
 
                         {/* Room Routes with Default Layout */}
                         <Route path="/rooms" element={<DefaultLayout><RoomsPage /></DefaultLayout>} />
