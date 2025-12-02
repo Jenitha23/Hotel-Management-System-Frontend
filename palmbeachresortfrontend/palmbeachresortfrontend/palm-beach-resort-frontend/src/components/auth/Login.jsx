@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import UserTypeSelector from './UserTypeSelector';
 import './Login.css';
 
 const Login = () => {
     const { login, error, clearError, loading } = useAuth();
     const navigate = useNavigate();
 
-    const [userType, setUserType] = useState('CUSTOMER');
-    const [isUnified, setIsUnified] = useState(false);
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -24,34 +21,17 @@ const Login = () => {
         if (error) clearError();
     };
 
-    const handleUserTypeChange = (type) => {
-        setUserType(type);
-        setIsUnified(type === 'UNIFIED');
-        clearError();
-    };
-
+    // CUSTOMER ONLY LOGIN
     const handleSubmit = async (e) => {
         e.preventDefault();
         clearError();
 
         try {
-            const result = await login(userType, formData, isUnified);
+            // Force customer login (no userType selector)
+            const result = await login('CUSTOMER', formData, false);
 
             if (result.success) {
-                const userRole = result.data.role;
-                switch (userRole) {
-                    case 'CUSTOMER':
-                        navigate('/customer-dashboard');
-                        break;
-                    case 'STAFF':
-                        navigate('/staff-dashboard');
-                        break;
-                    case 'ADMIN':
-                        navigate('/admin-dashboard');
-                        break;
-                    default:
-                        navigate('/');
-                }
+                navigate('/customer-dashboard');
             }
         } catch (err) {
             console.error('Login error:', err);
@@ -62,21 +42,13 @@ const Login = () => {
         <div className="login-container">
             <div className="login-card">
                 <div className="login-header">
-                    <h2>Login to Palm Beach Resort</h2>
+                    <h2>Welcome to Palm Beach Resort</h2>
+                    <p className="login-subtitle">Login for get our services</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="login-form">
                     <div className="form-group">
-                        <label>User Type:</label>
-                        <UserTypeSelector
-                            selectedType={userType}
-                            onTypeChange={handleUserTypeChange}
-                            mode="login"
-                        />
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="email">Email:</label>
+                        <label htmlFor="email">Email Address</label>
                         <input
                             type="email"
                             id="email"
@@ -84,13 +56,13 @@ const Login = () => {
                             value={formData.email}
                             onChange={handleChange}
                             required
-                            placeholder="Enter your email"
+                            placeholder="guest@example.com"
                             className="form-input"
                         />
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="password">Password:</label>
+                        <label htmlFor="password">Password</label>
                         <input
                             type="password"
                             id="password"
@@ -106,7 +78,7 @@ const Login = () => {
                     {error && (
                         <div className="error-message">
                             <span className="error-icon">⚠️</span>
-                            {typeof error === 'string' ? error : 'An error occurred'}
+                            {typeof error === 'string' ? error : 'Invalid email or password'}
                         </div>
                     )}
 
@@ -133,6 +105,7 @@ const Login = () => {
                             Register here
                         </Link>
                     </p>
+
                 </div>
             </div>
         </div>

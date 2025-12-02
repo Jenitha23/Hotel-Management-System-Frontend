@@ -1,12 +1,12 @@
+// Signup.jsx - Add the missing signup-header wrapper
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import UserTypeSelector from './UserTypeSelector';
 import './Signup.css';
 
 const Signup = () => {
-    const { register, error, clearError } = useAuth(); // FIXED: Added error from useAuth
-    const [userType, setUserType] = useState('CUSTOMER');
+    const { register, error, clearError } = useAuth();
+
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -28,24 +28,19 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        clearError(); // FIXED: Use clearError instead of setError
+        clearError();
         setSuccess('');
 
         try {
-            const submitData = userType === 'CUSTOMER'
-                ? formData
-                : { email: formData.email, password: formData.password, fullName: formData.fullName };
-
-            const result = await register(userType, submitData);
+            // FORCE CUSTOMER REGISTRATION ONLY
+            const result = await register('CUSTOMER', formData);
 
             if (result.success) {
                 setSuccess(`Registration successful! ${result.data.message}`);
                 setFormData({ email: '', password: '', fullName: '', phone: '' });
             }
-            // FIXED: Error is already set in the AuthContext, no need to set it here
         } catch (err) {
             console.error('Registration error:', err);
-            // FIXED: Error is handled by AuthContext
         } finally {
             setLoading(false);
         }
@@ -54,18 +49,17 @@ const Signup = () => {
     return (
         <div className="signup-container">
             <div className="signup-card">
-                <h2>Create Account</h2>
-                <p className="subtitle">Join Palm Beach Resort</p>
+                {/* ADD THIS signup-header DIV WRAPPER */}
+                <div className="signup-header">
+                    <h2>Create Your Account</h2>
+                    <p className="subtitle">Join Palm Beach Resort</p>
+                </div>
 
-                <UserTypeSelector
-                    selectedType={userType}
-                    onTypeChange={setUserType}
-                    mode="register"
-                />
+                {/* REMOVED: UserTypeSelector - only customer registration */}
 
                 <form onSubmit={handleSubmit} className="signup-form">
                     <div className="form-group">
-                        <label htmlFor="fullName">Full Name </label>
+                        <label htmlFor="fullName">Full Name *</label>
                         <input
                             type="text"
                             id="fullName"
@@ -80,7 +74,7 @@ const Signup = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="email">Email Address </label>
+                        <label htmlFor="email">Email Address *</label>
                         <input
                             type="email"
                             id="email"
@@ -93,7 +87,7 @@ const Signup = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="password">Password </label>
+                        <label htmlFor="password">Password *</label>
                         <input
                             type="password"
                             id="password"
@@ -106,24 +100,21 @@ const Signup = () => {
                         />
                     </div>
 
-                    {userType === 'CUSTOMER' && (
-                        <div className="form-group">
-                            <label htmlFor="phone">Phone Number </label>
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                value={formData.phone}
-                                onChange={handleChange}
-                                required
-                                pattern="^[+]?[0-9]{10,15}$"
-                                placeholder="+1234567890"
-                                title="Please enter a valid phone number (10-15 digits)"
-                            />
-                        </div>
-                    )}
+                    <div className="form-group">
+                        <label htmlFor="phone">Phone Number *</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            required
+                            pattern="^[+]?[0-9]{10,15}$"
+                            placeholder="+1234567890"
+                            title="Please enter a valid phone number (10-15 digits)"
+                        />
+                    </div>
 
-                    {/* FIXED: Use error from useAuth hook */}
                     {error && <div className="error-message">{error}</div>}
                     {success && <div className="success-message">{success}</div>}
 

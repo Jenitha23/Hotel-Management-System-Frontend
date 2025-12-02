@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { authService } from '../services/auth';
-import './StaffLogin.css'; // Import specific CSS
+import './StaffLogin.css';
 
 const StaffLogin = () => {
     const [formData, setFormData] = useState({
@@ -47,9 +47,7 @@ const StaffLogin = () => {
 
     return (
         <div className="staff-login-container">
-            <Link to="/" className="staff-back-button">
-                ← Back to Home
-            </Link>
+
 
             <div className="staff-login-card">
                 <div className="staff-login-header">

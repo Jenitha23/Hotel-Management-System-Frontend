@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { authService } from '../services/auth';
-import './AdminLogin.css'; // Import specific CSS
+import './AdminLogin.css';
 
 const AdminLogin = () => {
     const [formData, setFormData] = useState({
@@ -47,9 +47,7 @@ const AdminLogin = () => {
 
     return (
         <div className="admin-login-container">
-            <Link to="/" className="admin-back-button">
-                ← Back to Home
-            </Link>
+
 
             <div className="admin-login-card">
                 <div className="admin-login-header">
