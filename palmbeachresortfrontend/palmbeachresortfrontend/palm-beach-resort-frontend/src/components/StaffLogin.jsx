@@ -23,6 +23,13 @@ const StaffLogin = () => {
             const response = await authService.loginStaff(formData);
 
             if (response.data.success) {
+                // CRITICAL: Store role in localStorage
+                localStorage.setItem('userRole', 'STAFF');
+                localStorage.setItem('userId', response.data.userId);
+                localStorage.setItem('userEmail', response.data.email);
+                localStorage.setItem('userFullName', response.data.fullName);
+
+                console.log('✅ Staff login successful, role stored:', 'STAFF');
                 navigate('/staff/dashboard');
             } else {
                 setError(response.data.message || 'Login failed');
@@ -47,8 +54,6 @@ const StaffLogin = () => {
 
     return (
         <div className="staff-login-container">
-
-
             <div className="staff-login-card">
                 <div className="staff-login-header">
                     <div className="staff-login-icon">👔</div>

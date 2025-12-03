@@ -23,6 +23,13 @@ const AdminLogin = () => {
             const response = await authService.loginAdmin(formData);
 
             if (response.data.success) {
+                // CRITICAL: Store role in localStorage
+                localStorage.setItem('userRole', 'ADMIN');
+                localStorage.setItem('userId', response.data.userId);
+                localStorage.setItem('userEmail', response.data.email);
+                localStorage.setItem('userFullName', response.data.fullName);
+
+                console.log('✅ Admin login successful, role stored:', 'ADMIN');
                 navigate('/admin/dashboard');
             } else {
                 setError(response.data.message || 'Login failed');
@@ -47,8 +54,6 @@ const AdminLogin = () => {
 
     return (
         <div className="admin-login-container">
-
-
             <div className="admin-login-card">
                 <div className="admin-login-header">
                     <div className="admin-login-icon">👑</div>

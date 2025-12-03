@@ -5,7 +5,7 @@ import { API_BASE_URL } from '../utils/constants';
 const api = axios.create({
     baseURL: API_BASE_URL,
     withCredentials: true, // Essential for session cookies
-    timeout: 10000, // 10 second timeout
+    timeout: 30000, // 10 second timeout
     headers: {
         'Content-Type': 'application/json',
     },
